@@ -50,11 +50,10 @@
   }
   if (langBtn) langBtn.addEventListener("click", function () {
     hideHint();
-    try { localStorage.setItem("langPicked", "1"); } catch (e) {}
     setLang(lang === "pt" ? "en" : "pt");
   });
 
-  /* Aviso discreto: mostra onde trocar o idioma, uma vez, na primeira visita */
+  /* Aviso discreto: mostra onde trocar o idioma toda vez que o site abre (BR ou EN) */
   var hint = $("#langHint"), hintTimer = null, hintShown = false;
   function hideHint() {
     if (!hint) return;
@@ -62,15 +61,11 @@
     if (langBtn) langBtn.classList.remove("hinting");
     hint.classList.remove("show");
     setTimeout(function () { hint.hidden = true; }, 700);
-    try { sessionStorage.setItem("hint", "1"); } catch (e) {}
     window.removeEventListener("scroll", onHintScroll);
   }
   function onHintScroll() { if (window.scrollY > 240) hideHint(); }
   function showHint() {
-    var seen = false;
-    var force = /[?&]hint\b/.test(location.search);
-    try { seen = !!localStorage.getItem("langPicked") || !!sessionStorage.getItem("hint"); } catch (e) {}
-    if (!hint || (seen && !force) || hintShown) return;
+    if (!hint || hintShown) return;
     hintShown = true;
     hint.hidden = false;
     if (langBtn) langBtn.classList.add("hinting");
