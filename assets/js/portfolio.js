@@ -48,7 +48,34 @@
     document.body.classList.add("sw");
     setTimeout(function () { applyLang(); document.body.classList.remove("sw"); }, animated ? 170 : 0);
   }
-  if (langBtn) langBtn.addEventListener("click", function () { setLang(lang === "pt" ? "en" : "pt"); });
+  if (langBtn) langBtn.addEventListener("click", function () { hideHint(); setLang(lang === "pt" ? "en" : "pt"); });
+
+  /* Aviso discreto: mostra onde trocar o idioma, uma vez, na primeira visita */
+  var hint = $("#langHint"), hintTimer = null, hintShown = false;
+  function hideHint() {
+    if (!hint) return;
+    clearTimeout(hintTimer);
+    if (langBtn) langBtn.classList.remove("hinting");
+    hint.classList.remove("show");
+    setTimeout(function () { hint.hidden = true; }, 700);
+    try { localStorage.setItem("hint", "1"); } catch (e) {}
+    window.removeEventListener("scroll", onHintScroll);
+  }
+  function onHintScroll() { if (window.scrollY > 240) hideHint(); }
+  function showHint() {
+    var seen = false;
+    try { seen = !!localStorage.getItem("hint") || !!localStorage.getItem("lang"); } catch (e) {}
+    if (!hint || seen || hintShown) return;
+    hintShown = true;
+    hint.hidden = false;
+    if (langBtn) langBtn.classList.add("hinting");
+    setTimeout(function () { hint.classList.add("show"); }, 80);
+    hintTimer = setTimeout(hideHint, 9000);
+    hint.addEventListener("click", hideHint);
+    window.addEventListener("scroll", onHintScroll, { passive: true });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideHint(); }, { once: true });
+  }
+  setTimeout(showHint, animated ? 3800 : 800);
 
   /* =====================================================================
      Painéis animados (recriados a partir dos painéis reais de Power BI)
@@ -135,7 +162,7 @@
   function chartVbar(c) {
     var mx = Math.max.apply(null, c.rows.map(function (r) { return r[1]; }));
     return '<div class="plot vb">' + c.rows.map(function (r, i) {
-      return '<div class="c" title="' + esc(T(r[0]) + ": " + money(c, r[1])) + '"><span class="v">' + esc(money(c, r[1])) + '</span><div class="bw"><i style="--h:' + (r[1] / mx * 100).toFixed(1) + "%;--d:" + (0.1 + i * 0.09).toFixed(2) + 's"></i></div><span class="lb">' + esc(T(r[0])) + "</span></div>";
+      return '<div class="c" title="' + esc(T(r[0]) + ": " + money(c, r[1])) + '"><span class="v">' + esc(nf(r[1], c.d)) + '</span><div class="bw"><i style="--h:' + (r[1] / mx * 100).toFixed(1) + "%;--d:" + (0.1 + i * 0.09).toFixed(2) + 's"></i></div><span class="lb">' + esc(T(r[0])) + "</span></div>";
     }).join("") + "</div>";
   }
   function chartDonut(c) {
@@ -156,7 +183,8 @@
     }).join("");
     var ch = D.charts.map(function (c) {
       var body = c.t === "line" ? chartLine(c) : c.t === "hbar" ? chartHbar(c) : c.t === "vbar" ? chartVbar(c) : chartDonut(c);
-      return '<div class="card"><h4>' + esc(T(c.title)) + "</h4>" + body + "</div>";
+      var unit = (c.t === "vbar" && (c.p || c.u)) ? " (" + ((c.p || "") + (c.u ? T(c.u) : "")).trim() + ")" : "";
+      return '<div class="card"><h4>' + esc(T(c.title) + unit) + "</h4>" + body + "</div>";
     }).join("");
     host.innerHTML = '<div class="dash"><div class="dash-h"><span>' + esc(T(D.title)) + '</span><button type="button" class="real" data-zoom="' + D.img + '" data-title="' + esc(T(D.title)) + '">' + (lang === "en" ? "See real dashboard" : "Ver painel real") + ' ↗</button></div><div class="kpis" style="--n:' + D.kpis.length + '">' + kp + '</div><div class="grid4">' + ch + "</div></div>";
     var real = $(".real", host);
