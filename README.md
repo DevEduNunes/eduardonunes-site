@@ -4,6 +4,6 @@ Site estático publicado no GitHub Pages. Todo push na `master` publica sozinho 
 
 Ponto de partida: template do site Data Nexos (conteúdo ainda a adaptar).
 
-## Domínio próprio
+## Domínio
 
-Quando o domínio estiver registrado: criar o arquivo `CNAME` na raiz com o domínio (uma linha), apontar o DNS para o GitHub Pages e ativar em Settings → Pages.
+Domínio: `eduardonunes.dev` (arquivo `CNAME` na raiz). DNS no Cloudflare: 4 registros `A` (185.199.108.153, .109.153, .110.153, .111.153) e `CNAME www` para `<usuario>.github.io`, sem proxy ate o certificado ser emitido.
