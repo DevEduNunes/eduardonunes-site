@@ -1,943 +1,228 @@
 <!DOCTYPE html>
-
-<!--[if IE 8]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR" lang="pt-BR">
-<!--<![endif]-->
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <title>Eduardo Nunes — Dados, Power BI e Microsoft Fabric</title>
-    <meta name="author" content="Eduardo Nunes">
-    <link rel="canonical" href="https://eduardonunes.dev/">
-    <meta property="og:title" content="Eduardo Nunes — Dados, Power BI e Microsoft Fabric">
-    <meta property="og:description" content="Portfólio de Eduardo Nunes: analista e consultor de dados. Power BI, Microsoft Fabric, Python e automação.">
-    <meta property="og:url" content="https://eduardonunes.dev/">
-    <meta property="og:type" content="website">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Portfólio de Eduardo Nunes, analista e consultor de dados em Anápolis, GO. Dashboards em Power BI, pipelines no Microsoft Fabric e automações em Python.">
-
-    <!-- fontes hospedadas localmente (sem ida ao Google Fonts) -->
-    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/figtree-latin.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/ttf" href="assets/icon/icomoon/fonts/icomoon.ttf?grc9q8" crossorigin>
-    <link rel="stylesheet" href="assets/fonts/fonts.css">
-    <link rel="stylesheet" href="assets/icon/icomoon/style.css">
-    <!-- css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- prioriza o que aparece na primeira dobra -->
-    <link rel="preload" as="image" href="assets/images/section/davies-main.webp" fetchpriority="high">
-    <link rel="preload" as="image" href="assets/images/video/wave-bg-poster.jpg">
-
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="assets/images/logo/favicon.svg">
-    <link rel="apple-touch-icon-precomposed" href="assets/images/logo/favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eduardo Nunes — Dados, Power BI e Microsoft Fabric</title>
+  <meta name="description" content="Portfólio de Eduardo Nunes, analista e consultor de dados em Anápolis, GO. Dashboards em Power BI, pipelines no Microsoft Fabric e automações em Python.">
+  <meta name="author" content="Eduardo Nunes">
+  <meta name="theme-color" content="#07060b">
+  <link rel="canonical" href="https://eduardonunes.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eduardo Nunes — Dados, Power BI e Microsoft Fabric">
+  <meta property="og:description" content="Analista e consultor de dados. Power BI, Microsoft Fabric, Python e automação.">
+  <meta property="og:url" content="https://eduardonunes.dev/">
+  <meta property="og:image" content="https://eduardonunes.dev/assets/images/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/figtree-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Eduardo Nunes","url":"https://eduardonunes.dev/","jobTitle":"Analista e Consultor de Dados","email":"contato@eduardonunes.dev","address":{"@type":"PostalAddress","addressLocality":"Anápolis","addressRegion":"GO","addressCountry":"BR"},"sameAs":["https://www.linkedin.com/in/eduardonunesgoncalves/","https://github.com/DevEduNunes","https://datanexos.com"]}
+  </script>
 </head>
+<body>
 
-<body class="counter-scroll">
-    <canvas class="cursor-trail d-none d-xl-block" id="trail"></canvas>
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#topo" class="brand">Eduardo Nunes<span>.</span></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#linkedin">Posts</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#contato" class="nav-cta">Vamos conversar</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-label="Abrir menu">Menu</button>
+  </div>
+</header>
 
+<main id="topo">
 
-    <!-- Scroll Top -->
-    <button id="goTop">
-        <span class="border-progress"></span>
-        <span class="ic-wrap">
-            <span class="icon icon-arrow-caret-right"></span>
-        </span>
-    </button>
-    <!-- /Scroll Top -->
-
-    <!-- Preload -->
-    <div class="preloader overflow-hidden">
-        <div class="site-name"><span>Eduardo Nunes</span></div>
-        <div class="preloader-gutters">
-            <div class="bar">
-                <div class="inner-bar"></div>
-            </div>
-            <div class="bar">
-                <div class="inner-bar"></div>
-            </div>
-            <div class="bar">
-                <div class="inner-bar"></div>
-            </div>
-            <div class="bar">
-                <div class="inner-bar"></div>
-            </div>
-            <div class="bar">
-                <div class="inner-bar"></div>
-            </div>
-            <div class="bar">
-                <div class="inner-bar"></div>
-            </div>
-            <div class="bar">
-                <div class="inner-bar"></div>
-            </div>
-            <div class="bar">
-                <div class="inner-bar"></div>
-            </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Analista e consultor de dados · Anápolis, GO</span>
+        <h1>Transformo dados em <span class="grad">decisões.</span></h1>
+        <p class="lead">Construo painéis em Power BI, pipelines no Microsoft Fabric e automações em Python, da ingestão ao relatório que a empresa realmente usa.</p>
+        <div class="cta-row">
+          <a href="#projetos" class="btn btn-primary">Ver projetos →</a>
+          <a href="#contato" class="btn btn-ghost">Falar comigo</a>
         </div>
+        <ul class="chips" aria-label="Tecnologias">
+          <li class="chip">Power BI</li>
+          <li class="chip">Microsoft Fabric</li>
+          <li class="chip">Python</li>
+          <li class="chip">PySpark</li>
+          <li class="chip">Excel</li>
+        </ul>
+      </div>
+
+      <aside class="profile-card reveal" aria-label="Resumo">
+        <div class="avatar" aria-hidden="true">EN</div>
+        <h2>Eduardo Nunes</h2>
+        <p class="role">Analista de Dados · Consultor</p>
+        <ul>
+          <li><span class="dot"></span><div><strong>Consultor de Dados</strong>Data Nexos · 2026 — presente</div></li>
+          <li><span class="dot"></span><div><strong>Analista de Dados</strong>2025 — presente</div></li>
+          <li><span class="dot"></span><div><strong>Assistente de Dados</strong>2024 — 2025</div></li>
+        </ul>
+        <span class="status">Aberto a vagas e projetos</span>
+      </aside>
     </div>
-    <!-- /Preload -->
+  </section>
 
-    <main id="wrapper">
-        <!-- Header -->
-        <header class="tf-header style-2">
-            <div class="header-inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 col-md-1">
-                        <a href="index.html" class="logo-site">
-                            <img width="60" height="70" src="assets/images/logo/logo.svg" alt="Logo">
-                        </a>
-                        </div>
-                        <div class="col-3 col-md-2 ms-xl-auto d-none d-md-block">
-                            <ul class="tf-list vertical">
-                                <li> <a href="#workScroll" class="link text-caption">TRABALHOS</a></li>
-                                <li> <a href="#aboutScroll" class="link text-caption">SOBRE</a></li>
-                                <li> <a href="#linkedinScroll" class="link text-caption">LINKEDIN</a></li>
-                                <li> <a href="#contactScroll" class="link text-caption">CONTATO</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-3 col-md-2 d-none d-sm-block ms-auto ms-xl-0">
-                            <div class="header-contact">
-                                <a href="mailto:contato@eduardonunes.dev" class="link text-caption">CONTATO@EDUARDONUNES.DEV</a>
-                                <p class="text-caption text-utc">
-                                    <i class="icon icon-globe"></i>
-                                    ANÁPOLIS, GO
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3 col-md-2 d-flex justify-content-end align-items-start d-md-none">
-                            <button type="button" class="btn-mobile-menu open-mb-menu text-caption text-white link">
-                                <i class="icon icon-menu"></i>
-                                MENU
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- /Header -->
-        <!-- Hero Banner -->
-        <div class="section-hero-v2 flat-spacing">
-            <div class="overlay"></div>
-            <div class="bg-video">
-                <video muted autoplay loop playsinline preload="auto" poster="assets/images/video/wave-bg-poster.jpg">
-                    <source src="assets/images/video/wave-bg.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="container">
-                <div class="image-wrap">
-                    <div class="img-item image-1">
-                        <img class="effectFade fadeDown" fetchpriority="high" width="400" height="600" src="assets/images/section/davies-main.webp"
-                            alt="Eduardo Nunes">
-                        <div class="image-child">
-                            <img class="effectFade fadeZoom" width="1296" height="279" src="assets/images/item/davies-stroke.svg"
-                                alt="">
-                        </div>
-                    </div>
-                    <div class="img-item-2">
-                        <img class="effectFade fadeZoom" width="1296" height="279" src="assets/images/item/davies-fill.svg"
-                            alt="">
-                    </div>
-                </div>
-                <div class="bottom">
-                    <ul class="tf-list text-caption letter-space--1 fw-medium scroll-fadeUp2">
-                        <li><a href="#" class="link effectFade view-visible">AUTOMATIZAÇÃO</a></li>
-                        <li class="effectFade view-visible" data-delay="0.1">/</li>
-                        <li><a href="#" class="link effectFade view-visible" data-delay="0.2">BUSINESS INTELLIGENCE</a></li>
-                        <li class="effectFade view-visible" data-delay="0.3">/</li>
-                        <li><a href="#" class="link effectFade view-visible" data-delay="0.4">EXCEL</a></li>
-                        <li class="effectFade view-visible" data-delay="0.5">/</li>
-                        <li><a href="#" class="link effectFade view-visible" data-delay="0.6">FABRIC</a></li>
-                    </ul>
-                    <div class="effectFade fadeUp no-div view-visible" data-delay="0.1">
-                        <a href="#contactScroll" class="tf-btn style-2 style-fill-white animate-btn animate-dark">
-                            <span class="text-caption letter-space--1 fw-medium">FALE COMIGO</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Hero Banner -->
-        
-        <!-- About Me -->
-        <section class="section-about-me-v2 flat-spacing" id="aboutScroll">
-            <div class="container">
-                <div class="about-main flat-spacing-bottom">
-                    <div class="davies-video">
-                        <video class="video lazy-video" muted autoplay loop playsinline preload="none">
-                            <source data-src="assets/images/video/davies-video.webm" type="video/webm">
-                            <source data-src="assets/images/video/davies-video.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="content">
-                        <div class="top text-display-1 fw-semibold letter-space--3">
-                            <p class="effectFade fadeUp">Sobre</p>
-                            <p class="effectFade fadeUp" data-delay="0.1">Eduardo Nunes<span class="text-primary">_</span></p>
-                        </div>
-                        <h5 class="text-color-change letter-space--2 fw-normal">
-                            Sou analista e consultor de dados. Transformo complexidade em clareza, e dados em decisão.
-                        </h5>
-                        <p class="text-body-1 letter-space--1 text-white-64">
-                            Trabalho com Power BI, Microsoft Fabric, Python e automação, da ingestão ao painel. Para empresas, atendo também pela <a href="https://datanexos.com" target="_blank" rel="noopener" class="text-primary">Data Nexos</a>. Para vagas, meu histórico completo está no <a href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer" class="text-primary">LinkedIn</a>.
-                        </p>
-                    </div>
-                </div>
-                <div class="br-line d-flex flat-spacing-bottom"></div>
-                <div class="award-main">
-                    <div class="left">
-                        <video class="video lazy-video" muted autoplay loop playsinline preload="none">
-                            <source data-src="assets/images/video/logo-rodando-pequena.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <ul class="experience-list overflow-hidden">
-                        <li>Experiencias Profissionais</li>
-                        <li class="effectFade fadeRight">
-                            <p class="exp_name">Consultor de Dados · Data Nexos</p>
-                            <p class="exp_year">2026 — Presente</p>
-                        </li>
-                        <li class="effectFade fadeRight">
-                            <p class="exp_name">Analista de Dados</p>
-                            <p class="exp_year">2025 — Presente</p>
-                        </li>
-                        <li class="effectFade fadeRight">
-                            <p class="exp_name">Assistente de Dados</p>
-                            <p class="exp_year">2024 — 2025</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- About Me -->
-        <!-- Tech Stack -->
-        <section class="section-tech-stack-v2 flat-spacing">
-            <div class="container">
-                <div class="s-header d-block">
-                    <h2 class="text-display-2 letter-space--3 text-center effectFade fadeUp">Ferramentas & Tecnologias</h2>
-                </div>
-                <div class="tf-grid-layout lg-col-3">
-                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087" data-us-disableMobile="true">
-                        <div class="tech-content">
-                            <h5 class="tech-name letter-space--2">Figma</h5>
-                            <p class="tech-desc letter-space--1">
-                                Ferramenta colaborativa para <br>
-                                criar, prototipar e refinar <br>
-                                interfaces modernas.
-                            </p>
-                            <div class="ic-img">
-                                <img loading="lazy" width="33" height="48" src="assets/images/item/figma.svg" alt="Image Icon">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087" data-us-disableMobile="true">
-                        <div class="tech-content">
-                            <h5 class="tech-name letter-space--2">Power BI</h5>
-                            <p class="tech-desc letter-space--1">
-                                Plataforma de visualização para <br>
-                                criar dashboards interativos <br>
-                                e relatórios estratégicos.
-                            </p>
-                            <div class="ic-img">
-                                <img loading="lazy" width="32" height="48" src="assets/images/item/framer.svg" alt="Image Icon">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087" data-us-disableMobile="true">
-                        <div class="tech-content">
-                            <h5 class="tech-name letter-space--2">Python</h5>
-                            <p class="tech-desc letter-space--1">
-                                Linguagem versátil para <br>
-                                análise, automação e <br>
-                                manipulação de dados.
-                            </p>
-                            <div class="ic-img">
-                                <img loading="lazy" width="77" height="48" src="assets/images/item/webflow.svg" alt="Image Icon">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- /Tech Stack -->
-        <!-- Work -->
-        <section class="section-work-v2 flat-spacing" id="workScroll">
-            <div class="container">
-                <div class="s-header d-block">
-                    <h2 class="text-display-2 letter-space--3 text-center effectFade fadeUp">Trabalhos</h2>
-                    <p class="text-body-1 letter-space--1 text-center text-white-64 effectFade fadeUp" data-delay="0.1">
-                        Projetos de portfólio construídos com dados fictícios, para ilustrar o tipo de solução que entrego.
-                    </p>
-                </div>
-                <div class="work-grid">
-                    <a class="wg-case effectFade fadeUp" href="#contactScroll">
-                        <div class="case-image">
-                            <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-vendas.webp" alt="Painel de Vendas e Comercial em Power BI">
-                        </div>
-                        <div class="case-content">
-                            <div class="case-top">
-                                <h5 class="case-title letter-space--2">Vendas &amp; Comercial</h5>
-                                <span class="case-tag text-caption">Power BI</span>
-                            </div>
-                            <p class="case-desc text-body-2 text-white-64">
-                                Faturamento, ticket médio, margem e crescimento ano a ano, com detalhamento por categoria, vendedor e segmento.
-                            </p>
-                        </div>
-                    </a>
-                    <a class="wg-case effectFade fadeUp" data-delay="0.1" href="#contactScroll">
-                        <div class="case-image">
-                            <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-financeiro.webp" alt="Painel Financeiro — Fluxo de Caixa e DRE em Power BI">
-                        </div>
-                        <div class="case-content">
-                            <div class="case-top">
-                                <h5 class="case-title letter-space--2">Financeiro</h5>
-                                <span class="case-tag text-caption">Power BI</span>
-                            </div>
-                            <p class="case-desc text-body-2 text-white-64">
-                                Fluxo de caixa e DRE simplificado: receita, despesa, resultado e margem, com análise por categoria e centro de custo.
-                            </p>
-                        </div>
-                    </a>
-                    <a class="wg-case effectFade fadeUp" href="#contactScroll">
-                        <div class="case-image">
-                            <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-rh.webp" alt="Painel de RH — Turnover e Headcount em Power BI">
-                        </div>
-                        <div class="case-content">
-                            <div class="case-top">
-                                <h5 class="case-title letter-space--2">RH &amp; Pessoas</h5>
-                                <span class="case-tag text-caption">Power BI</span>
-                            </div>
-                            <p class="case-desc text-body-2 text-white-64">
-                                Headcount, turnover e folha salarial por departamento, cargo, gênero e motivo de desligamento.
-                            </p>
-                        </div>
-                    </a>
-                    <a class="wg-case effectFade fadeUp" data-delay="0.1" href="#contactScroll">
-                        <div class="case-image">
-                            <img loading="lazy" width="1098" height="617" src="assets/images/work/dashboard-estoque.webp" alt="Painel de Estoque — Giro e Ruptura em Power BI">
-                        </div>
-                        <div class="case-content">
-                            <div class="case-top">
-                                <h5 class="case-title letter-space--2">Estoque &amp; Logística</h5>
-                                <span class="case-tag text-caption">Power BI</span>
-                            </div>
-                            <p class="case-desc text-body-2 text-white-64">
-                                Giro de estoque, entradas, saídas e ruptura por categoria, produto e depósito, com evolução mensal.
-                            </p>
-                        </div>
-                    </a>
-                    <a class="wg-case wg-case--wide effectFade fadeUp no-div" href="#contactScroll">
-                        <div class="case-image case-image--mock">
-                            <div class="fmk-embed">
-                                <div class="fmk-root">
-
-                                    <div class="fmk-titlebar">
-                                        <div class="fmk-fabric-logo"></div>
-                                        <div class="fmk-crumbs">
-                                            <span>Eduardo Nunes — Demo</span>
-                                            <span class="fmk-sep">/</span>
-                                            <span class="fmk-current">pl_vendas_medalhao</span>
-                                        </div>
-                                        <div class="fmk-spacer"></div>
-                                        <div class="fmk-pill-btn"><span class="fmk-ic">&#8635;</span> Atualizar</div>
-                                        <div class="fmk-pill-btn"><span class="fmk-ic">&#128190;</span> Salvar</div>
-                                        <div class="fmk-pill-btn fmk-run"><span class="fmk-ic">&#9654;</span> Executar</div>
-                                    </div>
-
-                                    <div class="fmk-canvas">
-                                        <div class="fmk-status-banner"><span class="fmk-dot"></span> Última execução: sucesso · há 2 minutos</div>
-
-                                        <svg class="fmk-connectors" viewBox="0 0 1200 672" preserveAspectRatio="none">
-                                            <defs>
-                                                <marker id="fmk-arrow-head" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                                                    <path d="M0,0 L8,4 L0,8 Z" fill="#1E7A38"/>
-                                                </marker>
-                                            </defs>
-                                            <path d="M 260 300 L 330 300" stroke="#1E7A38" stroke-width="2" fill="none" marker-end="url(#fmk-arrow-head)"/>
-                                            <path d="M 550 288 C 610 288, 610 190, 670 190" stroke="#1E7A38" stroke-width="2" fill="none" marker-end="url(#fmk-arrow-head)"/>
-                                            <path d="M 550 312 C 610 312, 610 410, 670 410" stroke="#1E7A38" stroke-width="2" fill="none" marker-end="url(#fmk-arrow-head)"/>
-                                            <path d="M 890 190 C 940 190, 940 288, 980 300" stroke="#1E7A38" stroke-width="2" fill="none" marker-end="url(#fmk-arrow-head)"/>
-                                            <path d="M 890 410 C 940 410, 940 312, 980 300" stroke="#1E7A38" stroke-width="2" fill="none" marker-end="url(#fmk-arrow-head)"/>
-                                        </svg>
-
-                                        <div class="fmk-conn-label" style="left:22.5cqw; top:23.583cqw;">Êxito</div>
-                                        <div class="fmk-conn-label" style="left:49.583cqw; top:18.167cqw;">Êxito</div>
-                                        <div class="fmk-conn-label" style="left:49.583cqw; top:31cqw;">Êxito</div>
-
-                                        <div class="fmk-node" style="left:3.333cqw; top:22.5cqw;">
-                                            <div class="fmk-bar" style="background:#B08D57;"></div>
-                                            <div class="fmk-body">
-                                                <div class="fmk-ic" style="background:#B08D57;">B</div>
-                                                <div class="fmk-txt">
-                                                    <div class="fmk-name">01_ingest_bronze_vendas</div>
-                                                    <div class="fmk-type">Notebook · Bronze</div>
-                                                </div>
-                                            </div>
-                                            <div class="fmk-check"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="#fff" stroke-width="2.4" fill="none"/></svg></div>
-                                        </div>
-
-                                        <div class="fmk-node" style="left:27.5cqw; top:22.5cqw;">
-                                            <div class="fmk-bar" style="background:#A6A9B4;"></div>
-                                            <div class="fmk-body">
-                                                <div class="fmk-ic" style="background:#A6A9B4;">S</div>
-                                                <div class="fmk-txt">
-                                                    <div class="fmk-name">02_transform_silver_vendas</div>
-                                                    <div class="fmk-type">Notebook · Silver</div>
-                                                </div>
-                                            </div>
-                                            <div class="fmk-check"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="#fff" stroke-width="2.4" fill="none"/></svg></div>
-                                        </div>
-
-                                        <div class="fmk-node" style="left:55.833cqw; top:13.333cqw;">
-                                            <div class="fmk-bar" style="background:#D4AF37;"></div>
-                                            <div class="fmk-body">
-                                                <div class="fmk-ic" style="background:#D4AF37;">G</div>
-                                                <div class="fmk-txt">
-                                                    <div class="fmk-name">03_build_dim_calendario</div>
-                                                    <div class="fmk-type">Notebook · Gold</div>
-                                                </div>
-                                            </div>
-                                            <div class="fmk-check"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="#fff" stroke-width="2.4" fill="none"/></svg></div>
-                                        </div>
-
-                                        <div class="fmk-node" style="left:55.833cqw; top:31.667cqw;">
-                                            <div class="fmk-bar" style="background:#D4AF37;"></div>
-                                            <div class="fmk-body">
-                                                <div class="fmk-ic" style="background:#D4AF37;">G</div>
-                                                <div class="fmk-txt">
-                                                    <div class="fmk-name">04_build_gold_fato_vendas</div>
-                                                    <div class="fmk-type">Notebook · Gold</div>
-                                                </div>
-                                            </div>
-                                            <div class="fmk-check"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="#fff" stroke-width="2.4" fill="none"/></svg></div>
-                                        </div>
-
-                                        <div class="fmk-node" style="left:81.667cqw; top:22.5cqw;">
-                                            <div class="fmk-bar" style="background:#4A1D7A;"></div>
-                                            <div class="fmk-body">
-                                                <div class="fmk-ic" style="background:#4A1D7A;">P</div>
-                                                <div class="fmk-txt">
-                                                    <div class="fmk-name">Atualizar dataset</div>
-                                                    <div class="fmk-type">Power BI · Refresh</div>
-                                                </div>
-                                            </div>
-                                            <div class="fmk-check"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="#fff" stroke-width="2.4" fill="none"/></svg></div>
-                                        </div>
-
-                                        <div class="fmk-output-panel">
-                                            <div class="fmk-tabs">
-                                                <div class="fmk-tab fmk-active">Saída</div>
-                                                <div class="fmk-tab">Configuração</div>
-                                                <div class="fmk-tab">Parâmetros</div>
-                                            </div>
-                                            <table class="fmk-runs">
-                                                <tr><th>Nome</th><th>Tipo</th><th>Duração</th><th>Gatilho</th><th>Status</th></tr>
-                                                <tr><td>01_ingest_bronze_vendas</td><td>Notebook</td><td>18s</td><td>Agendado 06:00</td><td><span class="fmk-ok-badge"><span class="fmk-dot"></span>Êxito</span></td></tr>
-                                                <tr><td>02_transform_silver_vendas</td><td>Notebook</td><td>26s</td><td>Agendado 06:00</td><td><span class="fmk-ok-badge"><span class="fmk-dot"></span>Êxito</span></td></tr>
-                                                <tr><td>03_build_dim_calendario</td><td>Notebook</td><td>9s</td><td>Agendado 06:00</td><td><span class="fmk-ok-badge"><span class="fmk-dot"></span>Êxito</span></td></tr>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="case-content">
-                            <div class="case-top">
-                                <h5 class="case-title letter-space--2">Pipeline de Dados</h5>
-                                <span class="case-tag text-caption">Microsoft Fabric</span>
-                            </div>
-                            <p class="case-desc text-body-2 text-white-64">
-                                Simulação de uma arquitetura medalhão (Bronze → Silver → Gold) no Microsoft Fabric, orquestrando notebooks PySpark até o refresh do painel de Power BI — o pipeline completo por trás do case de Vendas.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- /Work -->
-        <!-- LinkedIn -->
-        <section class="section-linkedin flat-spacing" id="linkedinScroll">
-            <div class="container">
-                <div class="s-header d-block">
-                    <h2 class="text-display-2 letter-space--3 text-center effectFade fadeUp">Direto do LinkedIn</h2>
-                    <p class="text-body-1 letter-space--1 text-center text-white-64 effectFade fadeUp" data-delay="0.1">
-                        Bastidores, aprendizados e projetos que compartilho por lá.
-                    </p>
-                </div>
-                <div class="tf-grid-layout lg-col-3" id="linkedinPosts"></div>
-                <p class="linkedin-empty text-body-1 text-white-64" id="linkedinEmpty">
-                    Em breve, destaques dos meus posts aqui. Enquanto isso,
-                    <a href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer" class="text-primary">acompanhe no LinkedIn</a>.
-                </p>
-                <div class="linkedin-cta">
-                    <a href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer" class="tf-btn style-2 style-fill-white animate-btn animate-dark">
-                        <span class="text-caption letter-space--1 fw-medium">VER MAIS NO LINKEDIN</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- /LinkedIn -->
-        <!-- Service -->
-        <!-- /Service -->
-        <!-- Brand -->
-        <!-- /Brand -->
-        <!-- Award -->
-        <!-- /Award -->
-        <!-- Testimonial -->
-        <!-- /Testimonial -->
-        <!-- Pricing -->
-        <!-- /Pricing -->
-        <!-- Faq -->
-        <section class="section-faq type-2 flat-spacing bg-surface">
+  <!-- Projetos -->
+  <section id="projetos" class="alt">
     <div class="container">
-        <div class="s-header d-block">
-            <h2 class="title text-display-2 letter-space--3 text-center text-black effectFade fadeUp">
-                <span class="text">
-                    Perguntas
-                    <span class="icon"><img loading="lazy" width="120" height="120" src="assets/images/logo/logo.svg" alt="Image"></span>
-                </span> <br>
-                 Frequentes (FAQ)
-            </h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="accordion-faq_list" id="accordion-faq_list">
+      <div class="section-head reveal">
+        <span class="eyebrow">Projetos</span>
+        <h2>Painéis e pipelines que saem do papel</h2>
+        <p>Projetos de portfólio com dados fictícios, para mostrar o tipo de solução que entrego. Clique numa imagem para ampliar.</p>
+      </div>
 
-                    <div class="accordion-faq_item cl-line-2" role="presentation">
-                        <div class="accordion-action text-body-1 letter-space--1 fw-medium collapsed" data-bs-target="#faq-1" role="button"
-                            data-bs-toggle="collapse" aria-controls="faq-1" aria-expanded="false">
-                            <span class="accordion-order text-black-64">01</span>
-                            <p class="accordion-text text-black">O que você faz, na prática?</p>
-                            <div class="ic-wrap d-flex">
-                                <i class="icon icon-arrow-caret-down fs-10 text-black"></i>
-                            </div>
-                        </div>
-                        <div id="faq-1" class="collapse" data-bs-parent="#accordion-faq_list">
-                            <p class="accordion-content text-black-64">
-                                Analiso os dados da empresa, estruturo um modelo de dados eficiente e crio dashboards e pipelines que traduzem números em decisões. Atuo da conexão com as fontes (ERP, CRM, planilhas) até a entrega dos painéis em Power BI, com arquitetura medalhão no Microsoft Fabric quando o projeto pede.
-                            </p>
-                        </div>
-                    </div>
+      <div class="projects">
+        <article class="project reveal">
+          <button class="shot" type="button" data-zoom="assets/images/work/dashboard-vendas.webp" data-title="Vendas &amp; Comercial — Power BI">
+            <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-vendas.webp" alt="Painel de Vendas e Comercial em Power BI">
+          </button>
+          <div class="body">
+            <div class="tags"><span class="tag">Power BI</span><span class="tag">Vendas</span></div>
+            <h3>Vendas &amp; Comercial</h3>
+            <p>Faturamento, ticket médio, margem e crescimento ano a ano, com detalhamento por categoria, vendedor e segmento.</p>
+          </div>
+        </article>
 
-                    <div class="accordion-faq_item cl-line-2" role="presentation">
-                        <div class="accordion-action text-body-1 letter-space--1 fw-medium collapsed" data-bs-target="#faq-2" role="button"
-                            data-bs-toggle="collapse" aria-controls="faq-2" aria-expanded="false">
-                            <span class="accordion-order text-black-64">02</span>
-                            <p class="accordion-text text-black">Quais ferramentas você utiliza?</p>
-                            <div class="ic-wrap d-flex">
-                                <i class="icon icon-arrow-caret-down fs-10 text-black"></i>
-                            </div>
-                        </div>
-                        <div id="faq-2" class="collapse" data-bs-parent="#accordion-faq_list">
-                            <p class="accordion-content text-black-64">
-                                Power BI e Microsoft Fabric (Lakehouse, Data Factory, Dataflows Gen2, notebooks PySpark), além de Python e Excel avançado para automação. A escolha depende do orçamento, da infraestrutura existente e da necessidade do time.
-                            </p>
-                        </div>
-                    </div>
+        <article class="project reveal">
+          <button class="shot" type="button" data-zoom="assets/images/work/dashboard-financeiro.webp" data-title="Financeiro — Power BI">
+            <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-financeiro.webp" alt="Painel Financeiro: fluxo de caixa e DRE em Power BI">
+          </button>
+          <div class="body">
+            <div class="tags"><span class="tag">Power BI</span><span class="tag">Finanças</span></div>
+            <h3>Financeiro</h3>
+            <p>Fluxo de caixa e DRE simplificado: receita, despesa, resultado e margem, com análise por categoria e centro de custo.</p>
+          </div>
+        </article>
 
-                    <div class="accordion-faq_item cl-line-2" role="presentation">
-                        <div class="accordion-action text-body-1 letter-space--1 fw-medium collapsed" data-bs-target="#faq-3" role="button"
-                            data-bs-toggle="collapse" aria-controls="faq-3" aria-expanded="false">
-                            <span class="accordion-order text-black-64">03</span>
-                            <p class="accordion-text text-black">Minha empresa precisa ter uma estrutura de dados pronta?</p>
-                            <div class="ic-wrap d-flex">
-                                <i class="icon icon-arrow-caret-down fs-10 text-black"></i>
-                            </div>
-                        </div>
-                        <div id="faq-3" class="collapse" data-bs-parent="#accordion-faq_list">
-                            <p class="accordion-content text-black-64">
-                                Não. Muitos projetos começam com dados descentralizados, em planilhas, sistemas legados e fontes desconexas. Consolidar essas fontes, garantir a qualidade e construir a estrutura necessária do zero faz parte do trabalho.
-                            </p>
-                        </div>
-                    </div>
+        <article class="project reveal">
+          <button class="shot" type="button" data-zoom="assets/images/work/dashboard-rh.webp" data-title="RH &amp; Pessoas — Power BI">
+            <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-rh.webp" alt="Painel de RH: turnover e headcount em Power BI">
+          </button>
+          <div class="body">
+            <div class="tags"><span class="tag">Power BI</span><span class="tag">RH</span></div>
+            <h3>RH &amp; Pessoas</h3>
+            <p>Headcount, turnover e folha salarial por departamento, cargo, gênero e motivo de desligamento.</p>
+          </div>
+        </article>
 
-                    <div class="accordion-faq_item cl-line-2" role="presentation">
-                        <div class="accordion-action text-body-1 letter-space--1 fw-medium collapsed" data-bs-target="#faq-4" role="button"
-                            data-bs-toggle="collapse" aria-controls="faq-4" aria-expanded="false">
-                            <span class="accordion-order text-black-64">04</span>
-                            <p class="accordion-text text-black">Quanto tempo leva um projeto típico?</p>
-                            <div class="ic-wrap d-flex">
-                                <i class="icon icon-arrow-caret-down fs-10 text-black"></i>
-                            </div>
-                        </div>
-                        <div id="faq-4" class="collapse" data-bs-parent="#accordion-faq_list">
-                            <p class="accordion-content text-black-64">
-                                Um diagnóstico inicial leva de 1 a 2 semanas. A implementação completa, incluindo modelagem, ETL e dashboards, costuma levar de 4 a 10 semanas, dependendo da complexidade e do volume de dados. Apresento um cronograma antes de iniciar.
-                            </p>
-                        </div>
-                    </div>
+        <article class="project reveal">
+          <button class="shot" type="button" data-zoom="assets/images/work/dashboard-estoque.webp" data-title="Estoque &amp; Logística — Power BI">
+            <img loading="lazy" width="1098" height="617" src="assets/images/work/dashboard-estoque.webp" alt="Painel de Estoque: giro e ruptura em Power BI">
+          </button>
+          <div class="body">
+            <div class="tags"><span class="tag">Power BI</span><span class="tag">Logística</span></div>
+            <h3>Estoque &amp; Logística</h3>
+            <p>Giro de estoque, entradas, saídas e ruptura por categoria, produto e depósito, com evolução mensal.</p>
+          </div>
+        </article>
 
-                    <div class="accordion-faq_item cl-line-2" role="presentation">
-                        <div class="accordion-action text-body-1 letter-space--1 fw-medium collapsed" data-bs-target="#faq-5" role="button"
-                            data-bs-toggle="collapse" aria-controls="faq-5" aria-expanded="false">
-                            <span class="accordion-order text-black-64">05</span>
-                            <p class="accordion-text text-black">Os dashboards dependem de você para atualizar?</p>
-                            <div class="ic-wrap d-flex">
-                                <i class="icon icon-arrow-caret-down fs-10 text-black"></i>
-                            </div>
-                        </div>
-                        <div id="faq-5" class="collapse" data-bs-parent="#accordion-faq_list">
-                            <p class="accordion-content text-black-64">
-                                Não. Os painéis são entregues com atualização automática de dados, e sua equipe acessa os relatórios sem depender de mim a cada consulta. Treino os usuários-chave e documento tudo para o time ter autonomia no dia a dia.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-faq_item cl-line-2" role="presentation">
-                        <div class="accordion-action text-body-1 letter-space--1 fw-medium collapsed" data-bs-target="#faq-6" role="button"
-                            data-bs-toggle="collapse" aria-controls="faq-6" aria-expanded="false">
-                            <span class="accordion-order text-black-64">06</span>
-                            <p class="accordion-text text-black">Há suporte após a entrega?</p>
-                            <div class="ic-wrap d-flex">
-                                <i class="icon icon-arrow-caret-down fs-10 text-black"></i>
-                            </div>
-                        </div>
-                        <div id="faq-6" class="collapse" data-bs-parent="#accordion-faq_list">
-                            <p class="accordion-content text-black-64">
-                                Sim. Ofereço planos de suporte e evolução contínua para ajustes nos dashboards, novas métricas, integração de novas fontes de dados ou expansão do escopo conforme o negócio cresce.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-faq_item cl-line-2" role="presentation">
-                        <div class="accordion-action text-body-1 letter-space--1 fw-medium collapsed" data-bs-target="#faq-7" role="button"
-                            data-bs-toggle="collapse" aria-controls="faq-7" aria-expanded="false">
-                            <span class="accordion-order text-black-64">07</span>
-                            <p class="accordion-text text-black">Como funciona a contratação? Também estou aberto a vagas?</p>
-                            <div class="ic-wrap d-flex">
-                                <i class="icon icon-arrow-caret-down fs-10 text-black"></i>
-                            </div>
-                        </div>
-                        <div id="faq-7" class="collapse" data-bs-parent="#accordion-faq_list">
-                            <p class="accordion-content text-black-64">
-                                Para projetos, começamos com uma conversa de diagnóstico gratuita e, em seguida, envio uma proposta com escopo, prazo e investimento. Para vagas (CLT ou PJ), fale comigo pelo formulário ou pelo LinkedIn, onde está meu histórico completo.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+        <article class="project wide reveal">
+          <div class="pipeline" role="img" aria-label="Arquitetura medalhão: Bronze, Silver, Gold e refresh do Power BI">
+            <div class="flow">
+              <div class="node bronze"><b>Bronze</b><small>Ingestão dos dados brutos em Lakehouse</small></div>
+              <div class="arrow" aria-hidden="true">→</div>
+              <div class="node silver"><b>Silver</b><small>Limpeza, tipagem e regras de negócio</small></div>
+              <div class="arrow" aria-hidden="true">→</div>
+              <div class="node gold"><b>Gold</b><small>Modelo dimensional pronto para análise</small></div>
+              <div class="arrow" aria-hidden="true">→</div>
+              <div class="node pbi"><b>Power BI</b><small>Direct Lake e refresh no próprio pipeline</small></div>
             </div>
-        </div>
+          </div>
+          <div class="body">
+            <div class="tags"><span class="tag">Microsoft Fabric</span><span class="tag">PySpark</span><span class="tag">Data Factory</span></div>
+            <h3>Pipeline de dados em arquitetura medalhão</h3>
+            <p>Do Excel solto em pasta ao dado governado, atualizado sozinho: Lakehouses em camadas, pipeline no Data Factory, Dataflows Gen2, modelos semânticos em Direct Lake e notebooks PySpark, com o refresh do painel dentro do próprio fluxo.</p>
+          </div>
+        </article>
+      </div>
     </div>
-</section>
-<!-- /Faq -->
-<!-- CTA -->
-<section class="section-cta flat-spacing" id="contactScroll">
-    <div class="s-header d-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-2 offset-lg-2 col-lg-2">
-                    <div class="col-left">
-                        <a href="index.html" class="logo-custom">
-                            <div class="logo-site-sv">
-                                <img width="60" height="70" src="assets/images/logo/logo.svg" alt="Logo">
-                            </div>
-                            <span class="line-vertical left"></span>
-                            <span class="line-vertical right"></span>
-                            <span class="line-horizontal top"></span>
-                            <span class="line-horizontal bottom"></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-10 col-lg-6">
-                    <h2 class="text-display-2 letter-space--3 text-end effectFade fadeUp">
-                        Vamos começar <br>
-                        a construir juntos
-                    </h2>
-                </div>
-            </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <div class="container about-grid">
+      <div class="about-text reveal">
+        <span class="eyebrow">Sobre</span>
+        <div class="section-head" style="margin-bottom:22px">
+          <h2>Clareza no meio da complexidade</h2>
         </div>
+        <p><strong>Sou analista e consultor de dados.</strong> Transformo dados espalhados em planilhas, sistemas e pastas em informação confiável, que atualiza sozinha e ajuda quem decide.</p>
+        <p>Trabalho com Power BI, Microsoft Fabric, Python e Excel, da modelagem ao painel final. Para empresas, atendo também pela <a class="inline" href="https://datanexos.com" target="_blank" rel="noopener">Data Nexos</a>, minha consultoria de BI e automação.</p>
+        <div class="skills">
+          <div class="skill"><b>Power BI</b><span>Modelagem, DAX e dashboards</span></div>
+          <div class="skill"><b>Microsoft Fabric</b><span>Lakehouse, Data Factory, Dataflows</span></div>
+          <div class="skill"><b>Python / PySpark</b><span>Automação e transformação</span></div>
+          <div class="skill"><b>Excel</b><span>Análise e automação de rotinas</span></div>
+        </div>
+      </div>
+
+      <div id="experiencia" class="reveal">
+        <span class="eyebrow">Experiência</span>
+        <ul class="timeline" style="margin-top:26px">
+          <li><span class="when">2026 — presente</span><h3>Consultor de Dados</h3><p>Data Nexos · consultoria de BI e automação para empresas.</p></li>
+          <li><span class="when">2025 — presente</span><h3>Analista de Dados</h3><p>Painéis em Power BI e migração do ambiente de dados para o Microsoft Fabric.</p></li>
+          <li><span class="when">2024 — 2025</span><h3>Assistente de Dados</h3><p>Início da trajetória em dados: organização, análise e relatórios.</p></li>
+        </ul>
+      </div>
     </div>
+  </section>
+
+  <!-- LinkedIn -->
+  <section id="linkedin" class="alt">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <form class="form-cta" onsubmit="enviarContato(event)">
-                    <div class="form-content">
-                        <div class="tf-grid-layout sm-col-2">
-                            <fieldset class="tf-field">
-                                <input class="tf-input" id="campo-nome" type="text" placeholder required>
-                                <label class="tf-lable">Nome <span class="text-primary">*</span></label>
-                            </fieldset>
-                            <fieldset class="tf-field">
-                                <input class="tf-input" id="campo-email" type="email" placeholder required>
-                                <label class="tf-lable">Email <span class="text-primary">*</span></label>
-                            </fieldset>
-                        </div>
-                        <div class="tf-grid-layout sm-col-2">
-                            <div class="nc-wrap">
-                                <p class="select-label fs-14 text-white-64 d-sm-none">Selecione uma opção <span class="text-primary">*</span></p>
-                                <div class="nice-select" id="select-interesse">
-                                    <span class="current letter-space--1">Você está interessado em</span>
-                                    <ul class="list">
-                                        <li class="option disabled">-- Selecione uma opção --</li>
-                                        <li class="option">Vaga / oportunidade</li>
-                                        <li class="option">Automação</li>
-                                        <li class="option">Power BI</li>
-                                        <li class="option">Excel</li>
-                                        <li class="option">Fabric</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="nc-wrap">
-                                <p class="select-label fs-14 text-white-64 d-sm-none">Selecione o orçamento <span class="text-primary">*</span></p>
-                                <div class="nice-select" id="select-orcamento">
-                                    <span class="current letter-space--1">Orçamento em R$</span>
-                                    <ul class="list">
-                                        <li class="option disabled">-- Selecione o orçamento --</li>
-                                        <li class="option">Não se aplica</li>
-                                        <li class="option">R$ 1.500 – R$ 3.000</li>
-                                        <li class="option">R$ 3.000 – R$ 8.000</li>
-                                        <li class="option">R$ 8.000 – R$ 15.000</li>
-                                        <li class="option">Acima de R$ 15.000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <fieldset class="tf-field">
-                            <input class="tf-input" id="campo-projeto" type="text" placeholder required>
-                            <label class="tf-lable">Detalhe o projeto</label>
-                        </fieldset>
-                    </div>
-                    <div class="form-action">
-                        <button type="submit" class="tf-btn">
-                            <span class="text-caption">ENVIAR</span>
-                        </button>
-                        <p class="text-body-1">
-                            Diga oi! - <a href="mailto:contato@eduardonunes.dev" class="text-primary">contato@eduardonunes.dev</a>
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>
+      <div class="section-head reveal">
+        <span class="eyebrow">Direto do LinkedIn</span>
+        <h2>O que ando construindo e aprendendo</h2>
+        <p>Bastidores, aprendizados e projetos que compartilho por lá.</p>
+      </div>
+      <div class="posts" id="linkedinPosts"></div>
+      <div class="center">
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer">Ver mais no LinkedIn ↗</a>
+      </div>
     </div>
-</section>
+  </section>
 
-<script>
-function enviarContato(e) {
-    e.preventDefault();
-
-    const nome      = document.getElementById('campo-nome').value.trim();
-    const email     = document.getElementById('campo-email').value.trim();
-    const projeto   = document.getElementById('campo-projeto').value.trim();
-    const interesse = document.querySelector('#select-interesse .current').textContent.trim();
-    const orcamento = document.querySelector('#select-orcamento .current').textContent.trim();
-
-    if (!nome || !email) {
-        alert('Preencha pelo menos o nome e o email.');
-        return;
-    }
-
-    const mensagem =
-        `Olá Eduardo! Contato pelo seu portfólio:\n\n` +
-        `👤 *Nome:* ${nome}\n` +
-        `📧 *Email:* ${email}\n` +
-        `💡 *Interesse:* ${interesse}\n` +
-        `💰 *Orçamento:* ${orcamento}\n` +
-        `📝 *Projeto:* ${projeto || 'Não informado'}`;
-
-    const assunto = `Contato pelo portfólio — ${interesse}`;
-    const url = `mailto:contato@eduardonunes.dev?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
-    window.location.href = url;
-}
-</script>
-        <!-- /CTA -->
-        <!-- Footer -->
-        <footer class="tf-footer style-2">
-            <div class="container">
-                <div class="br-line"></div>
-            </div>
-            <div class="container">
-                <div class="footer-inner text-caption letter-space--1 fw-medium">
-                    <a href="#workScroll" class="link">TRABALHOS</a>
-                    <a href="#aboutScroll" class="link">SOBRE</a>
-                    <a href="#linkedinScroll" class="link">LINKEDIN</a>
-                    <a href="#" class="action-go-top tf-link-icon link">
-                        VOLTAR PARA INICIO
-                        <i class="icon icon-arrow-long-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="img-agency scroll-fadeZoom">
-                        <img class="effectFade fadeZoom" loading="lazy" width="1293" height="269" src="assets/images/logo/agency.webp" alt="Eduardo Nunes">
-                    </div>
-                    <div class="bottom text-caption letter-space--1 fw-medium">
-                        <p class="text-nocopy">
-                            © EDUARDO NUNES
-                        </p>
-                        <p class="">
-                            BRAZIL → <span class="clock"></span>
-                        </p>
-                        <div class="right">
-                            <a href="https://datanexos.com" target="_blank" rel="noopener" class="tf-link-icon text-caption link">
-                                    <i class="icon icon-arrow-top-right"></i>
-                                    DATA NEXOS
-                            </a>
-                            <a href="https://github.com/DevEduNunes" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="tf-link-icon text-caption link">
-                                    <i class="icon icon-arrow-top-right"></i>
-                                    GITHUB
-                            </a>
-                            <a href="https://www.linkedin.com/in/eduardonunesgoncalves/" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="tf-link-icon text-caption link">
-                                    <i class="icon icon-arrow-top-right"></i>
-                                    LINKEDIN
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- /Footer -->
-    </main>
-    <!-- Mobile Menu -->
-    <div class="offcanvas-menu">
-        <div class="offcanvas-content">
-            <div class="container h-100">
-                <div class="offcanvas-content_wrapin">
-                    <div class="canvas_head">
-                        <a href="index.html" class="logo-site">
-                            <img width="60" height="70" src="assets/images/logo/logo.svg" alt="Logo">
-                        </a>
-                        <div class="btn-mobile-menu close-mb-menu text-caption link">
-                            <i class="icon icon-close"></i>
-                            FECHAR
-                        </div>
-                    </div>
-                    <div class="canvas_center">
-                        <ul class="nav-ul-mb">
-                            <li>
-                                <div class="item close-mb-menu">
-                                    <a href="#workScroll" class="mb-menu-link text-display-1">
-                                        <span class="text">Trabalhos</span>
-                                        <div class="infiniteSlide_text_main">
-                                            <div class="infiniteSlide infiniteSlide_text" data-clone="5">
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Trabalhos
-                                                </p>
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Trabalhos
-                                                </p>
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Trabalhos
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item close-mb-menu">
-                                    <a href="#aboutScroll" class="mb-menu-link text-display-1">
-                                        <span class="text">Sobre</span>
-                                        <div class="infiniteSlide_text_main">
-                                            <div class="infiniteSlide infiniteSlide_text" data-clone="5">
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Sobre
-                                                </p>
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Sobre
-                                                </p>
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Sobre
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item close-mb-menu">
-                                    <a href="#linkedinScroll" class="mb-menu-link text-display-1">
-                                        <span class="text">LinkedIn</span>
-                                        <div class="infiniteSlide_text_main">
-                                            <div class="infiniteSlide infiniteSlide_text" data-clone="5">
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver LinkedIn
-                                                </p>
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver LinkedIn
-                                                </p>
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver LinkedIn
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item close-mb-menu">
-                                    <a href="#contactScroll" class="mb-menu-link text-display-1">
-                                        <span class="text">Contato</span>
-                                        <div class="infiniteSlide_text_main">
-                                            <div class="infiniteSlide infiniteSlide_text" data-clone="5">
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Contato
-                                                </p>
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Contato
-                                                </p>
-                                                <p class="text-body-2 letter-space--1">
-                                                    <span class="text-primary">//</span> Ver Contato
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="canvas_foot">
-                        <div class="left">
-                            <a href="mailto:contato@eduardonunes.dev" class="link text-caption">CONTATO@EDUARDONUNES.DEV</a>
-                            <p class="text-caption">
-                                CUP <span class="clock"></span>
-                            </p>
-                        </div>
-                        <div class="right">
-                            <a href="https://github.com/DevEduNunes" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="tf-link-icon text-caption link">
-                                    <i class="icon icon-arrow-top-right"></i>
-                                    GITHUB
-                            </a>
-                            <a href="https://www.linkedin.com/in/eduardonunesgoncalves/" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="tf-link-icon text-caption link">
-                                    <i class="icon icon-arrow-top-right"></i>
-                                    LINKEDIN
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Contato -->
+  <section id="contato" class="contact">
+    <div class="container reveal">
+      <span class="eyebrow">Contato</span>
+      <h2>Vamos construir algo <span class="grad">juntos?</span></h2>
+      <p class="sub">Para vagas, projetos ou uma conversa sobre dados. Respondo por e-mail.</p>
+      <a class="mail" href="mailto:contato@eduardonunes.dev">contato@eduardonunes.dev</a>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/DevEduNunes" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://datanexos.com" target="_blank" rel="noopener">Data Nexos ↗</a>
+      </div>
     </div>
-    <!-- /Mobile Menu -->
-    <!-- Javascript (defer: baixa em paralelo ao HTML e executa em ordem) -->
-    <script defer src="assets/js/jquery.min.js"></script>
-    <script defer src="assets/js/collapse.js"></script>
-    <script defer src="assets/js/gsap.min.js"></script>
-    <script defer src="assets/js/ScrollTrigger.min.js"></script>
-    <script defer src="assets/js/ScrollToPlugin.min.js"></script>
-    <script defer src="assets/js/SplitText.min.js"></script>
-    <script defer src="assets/js/ScrollSmooth.js"></script>
-    <script defer src="assets/js/jquery.nice-select.min.js"></script>
-    <script defer src="assets/js/infinityslide.js"></script>
-    <script defer src="assets/js/gsapAnimation.js"></script>
-    <script defer src="assets/js/main.js"></script>
-    <script defer src="assets/js/linkedin-feed.js"></script>
-    <!-- unicornStudio.umd.js (WebGL, 240 KB) é injetado pelo main.js quando a seção "Ferramentas" se aproxima da tela -->
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <span>© <span id="ano">2026</span> Eduardo Nunes · Anápolis, GO</span>
+    <span>Consultoria para empresas: <a href="https://datanexos.com" target="_blank" rel="noopener">datanexos.com</a></span>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Imagem ampliada">
+  <img src="" alt="">
+  <form method="dialog"><span></span><button>Fechar</button></form>
+</dialog>
+
+<script>document.getElementById("ano").textContent = new Date().getFullYear();</script>
+<script defer src="assets/js/portfolio.js"></script>
 </body>
-
 </html>

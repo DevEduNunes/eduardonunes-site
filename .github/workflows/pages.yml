@@ -30,7 +30,7 @@ jobs:
       - name: Prepare site folder
         run: |
           mkdir _site
-          rsync -a --exclude=".git" --exclude=".github" --exclude="_site" --exclude="README.md" --exclude="assets/scss" ./ _site/
+          rsync -a --exclude=".git" --exclude=".github" --exclude="_site" --exclude="README.md" ./ _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
