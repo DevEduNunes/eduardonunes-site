@@ -2,7 +2,7 @@
 
 Site estático publicado no GitHub Pages. Todo push na `master` publica sozinho (`.github/workflows/pages.yml`).
 
-Ponto de partida: template do site Data Nexos (conteúdo ainda a adaptar).
+Ponto de partida: template do site Data Nexos (conteúdo adaptado para Eduardo Nunes).
 
 ## Domínio
 
