@@ -1,0 +1,205 @@
+@use "../../abstracts/index" as *;
+
+.box-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition3;
+    cursor: pointer;
+}
+
+.tf-social-icon {
+    display: inline-flex;
+    gap: 16px;
+    // COLOR SOCIAL
+    --facebook-cl: rgb(59, 89, 152);
+    --x-cl: rgb(85, 85, 85);
+    --instagram-cl: linear-gradient(#8a3ab9, #e95950, #fccc63);
+    --threads-cl: rgb(224, 53, 102);
+    --youtube-cl: rgb(205, 32, 31);
+    --tiktok-cl: linear-gradient(#25f4ee, #000, #fe2c55);
+    --tiktok-cl2: rgb(254, 44, 85);
+    --pinterest-cl: rgb(203, 32, 39);
+    --tumblr-cl: rgb(55, 69, 92);
+    --vimeo-cl: rgb(26, 183, 234);
+    --snapchat-cl: rgb(255, 221, 0);
+    --whatsapp-cl: rgb(0, 230, 118);
+    --linked_in-cl: rgb(23, 106, 255);
+    --wechat-cl: rgb(26, 173, 24);
+    --reddit-cl: rgb(255, 69, 0);
+    --line-cl: rgb(0, 195, 77);
+    --spotify-cl: rgb(30, 125, 96);
+
+    a {
+        @include flex(center, center);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid;
+        border-color: var(--line);
+        position: relative;
+
+        .icon {
+            display: inline-flex;
+            position: relative;
+            z-index: 1;
+            font-size: 16px;
+        }
+
+        &::after {
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            background: transparent;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            z-index: 0;
+            @include transition3;
+            @include hidden;
+        }
+
+    }
+
+    &.style-2 {
+        a {
+            border-color: var(--line-3);
+            color: var(--white);
+        }
+    }
+
+    .social-facebook {
+        &::after {
+            background: var(--facebook-cl);
+        }
+
+        &:hover {
+            color: var(--white);
+
+            &::after {
+                @include visible;
+            }
+        }
+    }
+
+    .social-instagram {
+        &::after {
+            background: var(--instagram-cl);
+        }
+
+        &:hover {
+            color: var(--white);
+
+            &::after {
+                @include visible;
+            }
+        }
+    }
+
+    .social-x {
+        &::after {
+            background: var(--x-cl);
+        }
+
+        &:hover {
+            color: var(--white);
+
+            &::after {
+                @include visible;
+            }
+        }
+    }
+
+    .social-snapchat {
+        &::after {
+            background: var(--snapchat-cl);
+        }
+
+        &:hover {
+            color: var(--white);
+
+            &::after {
+                @include visible;
+            }
+        }
+    }
+
+    .social-pinterest {
+        &::after {
+            background: var(--pinterest-cl);
+        }
+
+        &:hover {
+            color: var(--white);
+
+            &::after {
+                @include visible;
+            }
+        }
+    }
+
+    .social-linkin {
+        &::after {
+            background: var(--linked_in-cl);
+        }
+
+        &:hover {
+            color: var(--white);
+
+            &::after {
+                @include visible;
+            }
+        }
+    }
+
+    .social-tiktok {
+        &::after {
+            background: var(--tiktok-cl);
+        }
+
+        &:hover {
+            color: var(--white);
+
+            &::after {
+                @include visible;
+            }
+        }
+    }
+
+    &.style-white {
+        a {
+            color: var(--white);
+            border-color: var(--line);
+        }
+    }
+}
+
+.tf-social-icon-2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a {
+        @include flex(center, center);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        color: var(--primary);
+
+        &:hover {
+            background-color: var(--line);
+        }
+    }
+
+    .icon {
+        font-size: 24px;
+    }
+}
+
+.tf-link-icon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

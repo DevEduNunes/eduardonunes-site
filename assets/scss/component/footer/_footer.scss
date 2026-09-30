@@ -1,0 +1,123 @@
+@use "../../abstracts/index" as *;
+
+.tf-footer {
+    .footer-inner {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .br-line {
+        background-color: var(--white-16);
+        display: flex;
+    }
+
+    &.style-2 {
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom {
+            padding-bottom: 28px;
+
+            .right {
+                display: flex;
+                gap: 32px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+        }
+
+    }
+
+    @include res(xl, min) {
+        &.style-2 {
+            .footer-bottom {
+                .img-agency {
+                    height: 290px;
+                }
+            }
+        }
+    }
+
+    @include res(sm) {
+        &.style-2 {
+            .footer-bottom {
+                .bottom {
+                    justify-content: center;
+                }
+
+                .right {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+.footer-menu-list {
+    display: grid;
+    gap: 4px;
+
+    a {
+        font-weight: 450;
+    }
+}
+
+.footer-bottom {
+    padding-bottom: 60px;
+
+    .img-agency {
+        margin-bottom: 40px;
+        display: flex;
+    }
+
+    .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    @include res(xl, min) {
+        .img-agency {
+            height: 269px;
+        }
+
+    }
+
+}
+
+.action-go-top {
+    gap: 6px;
+
+    .icon-arrow-long-right {
+        transform: rotate(-90deg);
+    }
+}
+
+.footer-inner {
+    .title {
+        margin-bottom: 30px;
+    }
+
+    .footer-menu-list {
+        margin-bottom: 30px;
+    }
+}
+
+.footer-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px 40px;
+
+    @include res(xl) {
+        padding: 0px 15px 30px;
+    }
+}

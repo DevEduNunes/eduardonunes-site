@@ -1,0 +1,342 @@
+@use "../../abstracts/index" as *;
+
+.article-blog {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--white-16);
+
+    .blog-content {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .btn-action {
+        width: 40px;
+        height: 40px;
+        @include flex(center, center);
+        border-radius: 12px;
+        border: 1px solid var(--white-16);
+        flex-shrink: 0;
+
+        .icon {
+            font-size: 20px;
+        }
+
+        &:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+    }
+
+    .infor_sub {
+        margin-bottom: 8px;
+    }
+
+    .infor_name {
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -webkit-box !important;
+        overflow: hidden;
+    }
+
+    @include res(ssm, min) {
+        &.style-horizontal {
+            display: flex;
+
+            .blog-image {
+                max-width: 300px;
+
+                img {
+                    aspect-ratio: calc(300/200);
+                }
+            }
+
+            .blog-content {
+                display: grid;
+            }
+        }
+    }
+
+    @include res(xl, min) {
+        .btn-action {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.wg-pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+
+    .pagination-item {
+        width: 40px;
+        height: 40px;
+        @include flex(center, center);
+        border: 1px solid var(--white-16);
+
+        &.active,
+        &:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+    }
+}
+
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 50px;
+
+    .sidebar-title {
+        margin-bottom: 16px;
+    }
+
+    @include res(xl, min) {
+        gap: 32px;
+    }
+}
+
+
+.list-relatest-post {
+    .relatest-post-item:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.relatest-post-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .image {
+        width: 80px;
+        aspect-ratio: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .title {
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+}
+
+.sidebar-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.list-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    a {
+        display: flex;
+        align-items: center;
+        padding: 5px 24px;
+        border-radius: 99px;
+        background: #25252580;
+
+        &:hover {
+            background: #fff;
+            color: #000;
+        }
+    }
+}
+
+.blog-single-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .image {
+        img {
+            width: 100%;
+            border-radius: 16px;
+        }
+    }
+}
+
+.meta-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .icon {
+            color: var(--primary);
+        }
+    }
+}
+
+.entry-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .tags-links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        max-width: 420px;
+    }
+}
+
+.blockquote-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    padding: 74px 39px 80px 56px;
+    background-color: rgb(26, 26, 26);
+    box-shadow: 0px 0px 20px 0px rgba(103, 103, 103, 0.25) inset;
+
+    img {
+        position: absolute;
+        width: 200px;
+        bottom: -50px;
+        right: 56px;
+        opacity: 0.1;
+    }
+
+    @include res(md) {
+        padding: 40px 30px 50px;
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 8px;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #FFFFFF1A;
+        box-shadow: 0px 0px 15px 0px #DDDDDD26 inset;
+        backdrop-filter: blur(6px);
+        font-size: 16px;
+
+        &:hover {
+            background-color: #fff;
+            color: #151515;
+        }
+    }
+}
+
+.comment-wrap {
+    .heading {
+        margin-bottom: 25px;
+    }
+
+    .author {
+        position: relative;
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #FFFFFF33;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        &.type-reply {
+            margin-left: 20px;
+        }
+    }
+
+    .name {
+        margin-bottom: 5px;
+        margin-top: -7px;
+    }
+
+    .image {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: 50% !important;
+        overflow: hidden;
+        filter: grayscale(100%);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .time {
+        margin-bottom: 20px;
+    }
+
+    .reply {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+
+    @include res(lg, min) {
+        .author {
+            gap: 18px;
+
+            &.type-reply {
+                margin-left: 66px;
+            }
+        }
+    }
+}
+
+.post-comment {
+    .heading {
+        margin-bottom: 35px;
+    }
+
+    .text {
+        margin-bottom: 25px;
+    }
+
+    .form-cta {
+        .form-content {
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+    }
+}

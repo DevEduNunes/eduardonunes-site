@@ -1,0 +1,28 @@
+@use "../abstracts/index"as *;
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px;
+}
+
+.sw-auto {
+    .swiper-wrapper {
+        align-items: center;
+    }
+
+    .swiper-slide {
+        width: auto;
+        transition-timing-function: linear;
+    }
+
+}
+
+.slider-auto-vertical {
+    .swiper-slide {
+        height: max-content !important;
+    }
+}
+
+.layout-sw-center {
+    overflow: hidden;
+}

@@ -1,0 +1,295 @@
+@use "../../abstracts/index" as *;
+
+form {
+    position: relative;
+    z-index: 30;
+
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        outline: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        padding: 16px 12px 3px 0px;
+        border: 0;
+        background-color: transparent;
+        border-bottom: 1px solid var(--white-16);
+        color: var(--white);
+        @include transition3;
+
+        &::placeholder {
+            color: var(--text-2);
+        }
+
+        &:focus {
+            border-color: var(--primary);
+        }
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    textarea {
+        height: 150px;
+        border-radius: 32px;
+        resize: none;
+    }
+
+    .form-content {
+        display: grid;
+        gap: 20px;
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select {
+    outline: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid var(--white-16);
+    color: var(--white-64);
+    @include transition3;
+    font-size: 18px;
+    letter-spacing: -0.18px;
+
+    option {
+        background-color: var(--black);
+        padding-left: 10px;
+    }
+}
+
+.password-wrapper {
+    position: relative;
+
+    .toggle-pass {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+}
+
+.tf-check {
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 1px solid var(--line);
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    @include transition3;
+
+    &:checked {
+        border-color: var(--black);
+        background-color: var(--black);
+
+        &::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &::before {
+        font-weight: 500;
+        font-family: $fontIcon;
+        content: "\e930";
+        position: absolute;
+        color: var(--white);
+        opacity: 0;
+        font-size: 16px;
+        transform: scale(0);
+        @include transition3;
+    }
+
+    &.style-white {
+        background-color: var(--black);
+        border: 1px solid #FFFFFF33;
+    }
+}
+
+.checkbox-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+        padding: 0;
+    }
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.tf-field {
+    position: relative;
+    .tf-lable {
+        cursor: text;
+        @include transition3;
+        font-size: 14px;
+        pointer-events: none;
+        color: var(--white-64);
+    }
+
+    @include res(sm, min) {
+        .tf-input {
+
+
+            &:not(:placeholder-shown),
+            &:focus {
+                ~.tf-lable {
+                    font-size: 12px;
+                    line-height: 16px;
+                    letter-spacing: 0;
+                }
+            }
+
+            &::placeholder {
+                color: transparent;
+            }
+        }
+
+        .tf-lable {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    @include res(sm) {
+        display: grid;
+
+        .tf-lable {
+            order: -1;
+        }
+
+        .tf-input {
+            padding-top: 0;
+        }
+    }
+}
+
+.form-cta {
+    .form-content {
+        gap: 40px;
+        margin-bottom: 88px;
+
+        input {
+            letter-spacing: -0.01em;
+        }
+    }
+
+    .tf-grid-layout {
+        gap: 40px;
+    }
+
+    .form-action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    @include res(sm, min) {
+        .form-content {
+            input {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+
+        .nice-select {
+            .current {
+                color: var(--white-64);
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+
+    @include res(xl) {
+        .form-content {
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .tf-grid-layout {
+            gap: 32px;
+        }
+    }
+
+    @include res(lg) {
+        .form-content {
+            gap: 24px;
+        }
+
+        .tf-grid-layout {
+            gap: 24px;
+        }
+    }
+
+    @include res(sm) {
+        .nice-select {
+            padding-bottom: 3px;
+        }
+    }
+}
+
+
+.form-search {
+    position: relative;
+
+    fieldset input {
+        padding-right: 30px;
+    }
+
+    button {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%) rotateY(180deg);
+    }
+}

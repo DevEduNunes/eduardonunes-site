@@ -1,0 +1,363 @@
+@use "../../abstracts/index" as *;
+
+.tf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 40px;
+    padding-left: 23px;
+    padding-right: 23px;
+    position: relative;
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    border: 1px solid var(--white);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        top: calc(100% + 1px);
+        height: 100%;
+        border-radius: 10px;
+        background-color: var(--white);
+        z-index: -1;
+        @include transition3;
+    }
+
+    &:hover {
+        color: var(--black);
+
+        &::before {
+            top: 0px;
+        }
+    }
+
+    &.style-2 {
+        border-radius: 999px;
+
+        &::before {
+            border-radius: 999px;
+        }
+    }
+
+    &.style-fill {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: var(--black);
+
+        &::before {
+            content: none;
+        }
+    }
+
+    &.style-fill-white {
+        background-color: var(--white);
+        border-color: var(--white);
+        color: var(--black);
+
+        &::before {
+            content: none;
+        }
+    }
+}
+
+.animate-btn {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        &::after {
+            animation: shine-reverse 1s forwards;
+        }
+    }
+}
+
+.animate-btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0) 70%);
+    top: 0;
+    left: -100%;
+    opacity: 0.6;
+}
+
+button.animate-btn::after,
+.animate-btn.tf-btn::after {
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0) 70%);
+}
+
+.animate-btn.animate-dark::after {
+    background-image: linear-gradient(90deg, transparent, rgb(0 0 0 /0.25), transparent);
+}
+
+
+.tf-loading {
+    font-size: 14px;
+    line-height: 20px;
+    width: auto;
+    height: 42px;
+    min-width: 118px;
+    padding: 10px;
+
+    &.loadmore {
+        .spinner-circle {
+            display: none;
+        }
+
+        &.loading {
+            .spinner-circle {
+                display: block;
+            }
+
+            .text {
+                display: none;
+            }
+        }
+
+        &:hover {
+            .spinner-child {
+                &::before {
+                    background-color: var(--white);
+                }
+            }
+        }
+
+        .spinner-child {
+            &::before {
+                background-color: var(--main);
+                @include transition3;
+            }
+        }
+    }
+}
+
+
+.spinner-circle {
+    width: 24px;
+    height: 24px;
+    position: relative;
+
+    .spinner-child {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            margin: 0 auto;
+            width: 20%;
+            height: 20%;
+            background-color: var(--white);
+            border-radius: 100%;
+            -webkit-animation: spinner-circleBounceDelay 1s infinite ease-in-out both;
+            animation: spinner-circleBounceDelay 1s infinite ease-in-out both;
+        }
+    }
+
+    .spinner-circle2 {
+        -webkit-transform: rotate(40deg);
+        -ms-transform: rotate(40deg);
+        transform: rotate(40deg);
+
+        &::before {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+    }
+
+    .spinner-circle3 {
+        -webkit-transform: rotate(80deg);
+        -ms-transform: rotate(80deg);
+        transform: rotate(80deg);
+
+        &::before {
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+        }
+    }
+
+    .spinner-circle4 {
+        -webkit-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+        transform: rotate(120deg);
+
+        &::before {
+            -webkit-animation-delay: -0.7s;
+            animation-delay: -0.7s;
+        }
+    }
+
+    .spinner-circle5 {
+        -webkit-transform: rotate(160deg);
+        -ms-transform: rotate(160deg);
+        transform: rotate(160deg);
+
+        &::before {
+            -webkit-animation-delay: -0.6s;
+            animation-delay: -0.6s;
+        }
+    }
+
+    .spinner-circle6 {
+        -webkit-transform: rotate(200deg);
+        -ms-transform: rotate(200deg);
+        transform: rotate(200deg);
+
+        &::before {
+            -webkit-animation-delay: -0.5s;
+            animation-delay: -0.5s;
+        }
+    }
+
+    .spinner-circle7 {
+        -webkit-transform: rotate(240deg);
+        -ms-transform: rotate(240deg);
+        transform: rotate(240deg);
+
+        &::before {
+            -webkit-animation-delay: -0.4s;
+            animation-delay: -0.4s;
+        }
+    }
+
+    .spinner-circle8 {
+        -webkit-transform: rotate(280deg);
+        -ms-transform: rotate(280deg);
+        transform: rotate(280deg);
+
+        &::before {
+            -webkit-animation-delay: -0.3s;
+            animation-delay: -0.3s;
+        }
+    }
+
+    .spinner-circle9 {
+        -webkit-transform: rotate(320deg);
+        -ms-transform: rotate(320deg);
+        transform: rotate(320deg);
+
+        &::before {
+            -webkit-animation-delay: -0.2s;
+            animation-delay: -0.2s;
+        }
+    }
+}
+
+
+.tf-btn-line {
+    font-weight: 600;
+    color: var(--primary);
+    position: relative;
+    @include transition3;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: linear-gradient(to right, var(--primary-2) 50%, var(--primary) 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.3s linear;
+    cursor: pointer;
+    padding-bottom: 4px;
+
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        height: 2px;
+        background-color: var(--primary);
+        @include transition3;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        width: 0;
+        bottom: 0px;
+        height: 2px;
+        background-color: var(--primary-2);
+        transition: width 0.3s linear;
+        z-index: 1;
+    }
+
+    &.style-white {
+        color: var(--white);
+        background: linear-gradient(to right,
+                var(--primary-2) 50%,
+                var(--white) 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: background-position 0.3s linear;
+
+        &::after {
+            background-color: var(--white);
+        }
+    }
+
+
+    &:hover {
+        background-position: left;
+
+        &::before {
+            width: 100%;
+        }
+    }
+
+    &.active {
+        background-position: left;
+
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+.tf-btn-2 {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+    border-radius: 50%;
+    @include flex(center, center);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%),
+        radial-gradient(65.62% 65.62% at 50% 50%, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0px 0.5px 0.5px 0px #FFFFFF52 inset,
+        0px 1px 0.5px 0px #FFFFFF1F inset,
+        0px 4px 16px 0px #FFFFFF29 inset,
+        0px -12px 16px 0px #FFFFFF0F inset,
+        0px 0px 0px 1px #0000008F,
+        0px 3px 6px 0px #00000030,
+        0px 10px 10px 0px #0000000F,
+        0px 12px 16px 0px #0000000F,
+        0px 23px 14px 0px #0000000F;
+    backdrop-filter: blur(12px);
+
+    @include res(xl, min) {
+        width: 120px;
+        height: 120px;
+        font-size: 48px;
+    }
+}

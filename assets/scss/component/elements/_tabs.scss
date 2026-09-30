@@ -1,0 +1,86 @@
+@use "../../abstracts/index" as *;
+
+
+
+.flat-animate-tab {
+
+    .tab-content {
+        position: relative;
+    }
+
+    .tab-pane {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        transform: translateY(30px);
+        transition-timing-function: ease-in;
+        transition-duration: 0.2s;
+
+        &.active {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
+        }
+    }
+}
+
+.pricing-tab_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .tf-btn-tab {
+        display: grid;
+        place-items: center;
+        gap: 16px;
+        color: var(--white-64);
+        text-align: center;
+
+        &.active {
+            color: var(--white);
+
+            .dot-active {
+                background: var(--primary);
+                box-shadow: 0px 0px 2px 1px #05941D4D,
+                    0px 0px 6px 4px #05941D2E;
+            }
+        }
+    }
+
+    .dot-active {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid var(--white-32);
+    }
+
+    @include res(sm, min) {
+        gap: 12px;
+
+        li {
+            max-width: 206px;
+            width: 100%;
+        }
+    }
+}

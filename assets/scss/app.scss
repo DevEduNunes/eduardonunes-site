@@ -1,0 +1,42 @@
+/* ---------------------------------------------------------
+    * Name: Davies - Personal Portfolio HTML Template
+    * Version: 1.0.0
+    * Author: Themesflat
+    * Author URI: http://themesflat.com 
+
+	* Abstracts variable
+    
+    * Core CSS
+
+    * Components
+        * Blog
+        * Layout
+        * Header
+        * Accordion
+        * Animation
+        * Box Icon
+        * Button
+        * Carousel
+        * Form
+        * Hover
+        * Nice Select
+        * Popup
+        * Section
+        * Slider
+        * Tabs
+        * Testimonial
+        * Widget
+        * Footer
+
+ ------------------------------------------------------------------------------ */
+
+/*--------- Abstracts variable ---------- */
+@use "abstracts/index" as abstract;
+
+/*------------ Core CSS ---------------- */
+@use "core/reset" as reset;
+@use "core/typography" as typography;
+@use "core/classes" as customClass;
+
+/*------------ Component ---------------- */
+@use "component/index" as component;

@@ -1,0 +1,362 @@
+@use "../../abstracts/index"as *;
+
+.hover-img {
+    .img-style {
+        overflow: hidden;
+
+        >img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-transition: opacity 0.5s ease, transform 1.5s cubic-bezier(0, 0, 0.44, 1.18);
+            transition: opacity 0.5s ease, transform 1.5s cubic-bezier(0, 0, 0.44, 1.18);
+        }
+    }
+
+    &:hover {
+        .img-style {
+            >img {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+
+    }
+
+    .img-style2 {
+        overflow: hidden;
+        border-radius: 10px;
+
+        .img-hv {
+            width: 100%;
+            object-fit: cover;
+            -webkit-transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+            transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+            transition: transform 500ms ease;
+        }
+    }
+}
+
+.hover-img2 {
+    .img-style2 {
+        overflow: hidden;
+        border-radius: 8px;
+
+        .img2 {
+            @include transition3;
+        }
+    }
+
+    &:hover {
+        .img2 {
+            transform: scale(1.1) rotate(3deg);
+        }
+    }
+}
+
+.hover-img3 {
+    .img-style3 {
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            @include transition3;
+        }
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.075);
+            @include transition3;
+        }
+    }
+}
+
+.hover-img4 {
+    .img-style4 {
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 0%;
+            left: 50%;
+            top: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%) rotate(-45deg);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 1s;
+        }
+    }
+
+    &:hover {
+        .img-style4 {
+            &:after {
+                height: 250%;
+                transition: all 600ms linear;
+                background-color: transparent;
+            }
+
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.pagi2 .swiper-pagination2,
+.swiper-button-next2,
+.swiper-button-prev2,
+.hv-one {
+    &:hover {
+        .box-img {
+            .icon-practice {
+                opacity: 1;
+                z-index: 99;
+                top: 50%;
+                transition-delay: 0.5s;
+            }
+        }
+
+        .img-style {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    .img-style {
+        border-radius: 10px;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            background: #00000080;
+            width: 100%;
+            height: 100%;
+            @include transition5;
+            z-index: 99;
+            opacity: 0;
+            border-radius: 10px;
+        }
+
+        &.s-one::before {
+            border-radius: 50%;
+        }
+    }
+}
+
+.hv-one2 {
+    &:hover {
+        .img-style2 {
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .img-style2 {
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all 0.4s ease-out 0s;
+            -moz-transition: all 0.4s ease-out 0s;
+            -ms-transition: all 0.4s ease-out 0s;
+            -o-transition: all 0.4s ease-out 0s;
+            transition: all 0.4s ease-out 0s;
+            opacity: 0;
+            visibility: hidden;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            border-radius: 10px;
+        }
+    }
+}
+
+.hv-tool {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hover-tooltip {
+    position: relative;
+
+    .tooltip {
+        position: absolute;
+        white-space: nowrap;
+        padding: 4px 12px;
+        border-radius: 2px;
+        bottom: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        color: var(--white);
+        background-color: var(--black);
+        transition:
+            transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+        z-index: 5;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 400;
+        border-radius: 8px;
+        text-align: center;
+        font-family: $font-main;
+        display: none;
+
+        &::before {
+            content: "";
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            top: 26px;
+            position: absolute;
+            background: var(--black);
+            width: 9px;
+            height: 9px;
+            z-index: -1;
+        }
+
+        @include res(xl, min) {
+            font-size: 16px;
+            line-height: 22px;
+            display: block;
+        }
+
+        &.bg-primary {
+            &::before {
+                background: var(--primary);
+            }
+        }
+    }
+
+    &:hover {
+        .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &.tooltip-bot {
+        .tooltip {
+            top: calc(100% + 10px);
+            bottom: unset;
+
+            &::before {
+                top: -4px;
+            }
+        }
+    }
+
+    &.tooltip-left {
+        .tooltip {
+            right: 100%;
+            bottom: auto;
+            transform: translateX(0px);
+            left: unset;
+
+            &::before {
+                top: 50%;
+                left: auto;
+                transform: translateY(-50%) rotate(45deg);
+                right: -4px;
+            }
+        }
+
+        &:hover {
+            .tooltip {
+                transform: translateX(-12px);
+            }
+        }
+    }
+
+    &.tooltip-right {
+        .tooltip {
+            left: 100%;
+            bottom: auto;
+            transform: translateX(0px);
+
+            &::before {
+                top: 50%;
+                right: auto;
+                transform: translateY(-50%) rotate(45deg);
+                left: -4px;
+            }
+        }
+
+        &:hover {
+            .tooltip {
+                transform: translateX(8px);
+            }
+        }
+    }
+}
+
+.hover-overlay {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        z-index: 2;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        top: 0;
+        left: 0;
+        transition: 0.4s ease 0.1s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:hover::before {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.hover-cursor-img {
+    .hover-image {
+        display: none;
+    }
+
+    @include res(xl, min) {
+        position: relative;
+
+        .hover-image {
+            position: fixed;
+            display: block;
+            transform: scale(0);
+            pointer-events: none;
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            z-index: 1000;
+
+            img {
+                border-radius: 50%;
+                max-width: 150px;
+                box-shadow: 0px 10px 25px 0px #2b344a1f;
+            }
+        }
+    }
+}
