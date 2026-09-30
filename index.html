@@ -101,8 +101,7 @@
                         </div>
                         <div class="col-3 col-md-2 d-none d-sm-block ms-auto ms-xl-0">
                             <div class="header-contact">
-                                <a href="mailto:contato@datanexos.com" class="link text-caption">CONTATO@DATANEXOS.COM</a>
-                                <a href="https://wa.me/5562997268818" class="link text-caption" target="_blank" rel="noopener">(62)9972-6818</a>
+                                <a href="mailto:contato@eduardonunes.dev" class="link text-caption">CONTATO@EDUARDONUNES.DEV</a>
                                 <p class="text-caption text-utc">
                                     <i class="icon icon-globe"></i>
                                     ANÁPOLIS, GO
@@ -654,7 +653,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <form class="form-cta" onsubmit="enviarWhatsApp(event)">
+                <form class="form-cta" onsubmit="enviarContato(event)">
                     <div class="form-content">
                         <div class="tf-grid-layout sm-col-2">
                             <fieldset class="tf-field">
@@ -706,7 +705,7 @@
                             <span class="text-caption">ENVIAR</span>
                         </button>
                         <p class="text-body-1">
-                            Diga oi! - <a href="mailto:contato@datanexos.com" class="text-primary">contato@datanexos.com</a>
+                            Diga oi! - <a href="mailto:contato@eduardonunes.dev" class="text-primary">contato@eduardonunes.dev</a>
                         </p>
                     </div>
                 </form>
@@ -716,7 +715,7 @@
 </section>
 
 <script>
-function enviarWhatsApp(e) {
+function enviarContato(e) {
     e.preventDefault();
 
     const nome      = document.getElementById('campo-nome').value.trim();
@@ -738,7 +737,8 @@ function enviarWhatsApp(e) {
         `💰 *Orçamento:* ${orcamento}\n` +
         `📝 *Projeto:* ${projeto || 'Não informado'}`;
 
-    const url = `https://wa.me/5562997268818?text=${encodeURIComponent(mensagem)}`;
+    const assunto = `Contato pelo portfólio — ${interesse}`;
+    const url = `mailto:contato@eduardonunes.dev?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
     window.location.href = url;
 }
 </script>
@@ -897,7 +897,7 @@ function enviarWhatsApp(e) {
                     </div>
                     <div class="canvas_foot">
                         <div class="left">
-                            <a href="mailto:contato@datanexos.com" class="link text-caption">CONTATO@DATANEXOS.COM</a>
+                            <a href="mailto:contato@eduardonunes.dev" class="link text-caption">CONTATO@EDUARDONUNES.DEV</a>
                             <p class="text-caption">
                                 CUP <span class="clock"></span>
                             </p>
