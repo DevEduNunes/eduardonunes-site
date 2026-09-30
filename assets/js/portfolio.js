@@ -167,7 +167,7 @@
   function chartVbar(c) {
     var mx = Math.max.apply(null, c.rows.map(function (r) { return r[1]; }));
     return '<div class="plot vb">' + c.rows.map(function (r, i) {
-      return '<div class="c" title="' + esc(T(r[0]) + ": " + money(c, r[1])) + '"><span class="v">' + esc(nf(r[1], c.d)) + '</span><div class="bw"><i style="--h:' + (r[1] / mx * 100).toFixed(1) + "%;--d:" + (0.1 + i * 0.09).toFixed(2) + 's"></i></div><span class="lb">' + esc(T(r[0])) + "</span></div>";
+      return '<div class="c" title="' + esc(T(r[0]) + ": " + money(c, r[1])) + '"><span class="v">' + esc(money(c, r[1])) + '</span><div class="bw"><i style="--h:' + (r[1] / mx * 100).toFixed(1) + "%;--d:" + (0.1 + i * 0.09).toFixed(2) + 's"></i></div><span class="lb">' + esc(T(r[0])) + "</span></div>";
     }).join("") + "</div>";
   }
   function chartDonut(c) {
@@ -188,8 +188,7 @@
     }).join("");
     var ch = D.charts.map(function (c) {
       var body = c.t === "line" ? chartLine(c) : c.t === "hbar" ? chartHbar(c) : c.t === "vbar" ? chartVbar(c) : chartDonut(c);
-      var unit = (c.t === "vbar" && (c.p || c.u)) ? " (" + ((c.p || "") + (c.u ? T(c.u) : "")).trim() + ")" : "";
-      return '<div class="card"><h4>' + esc(T(c.title) + unit) + "</h4>" + body + "</div>";
+      return '<div class="card"><h4>' + esc(T(c.title)) + "</h4>" + body + "</div>";
     }).join("");
     host.innerHTML = '<div class="dash"><div class="dash-h"><span>' + esc(T(D.title)) + '</span><button type="button" class="real" data-zoom="' + D.img + '" data-title="' + esc(T(D.title)) + '">' + (lang === "en" ? "See real dashboard" : "Ver painel real") + ' ↗</button></div><div class="kpis" style="--n:' + D.kpis.length + '">' + kp + '</div><div class="grid4">' + ch + "</div></div>";
     var real = $(".real", host);

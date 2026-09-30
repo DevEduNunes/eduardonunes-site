@@ -91,7 +91,7 @@ button { font: inherit; color: inherit; }
 .about-grid li span:last-child { color: var(--muted); text-align: right; }
 
 /* Projetos */
-.work { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.work { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 48px; align-items: center; }
 .plist { max-width: 560px; }
 .plist li { border-top: 1px solid var(--line); }
 .plist li:last-child { border-bottom: 1px solid var(--line); }
@@ -108,7 +108,7 @@ button { font: inherit; color: inherit; }
 .prow.on .d p { opacity: 1; padding-top: 8px; }
 .prow .mimg { display: none; }
 
-.pv { position: relative; width: 100%; max-width: 580px; justify-self: end; aspect-ratio: 16 / 11; }
+.pv { position: relative; aspect-ratio: 16 / 10.4; }
 .pv-item { position: absolute; inset: 0; opacity: 0; clip-path: inset(0 0 0 100%); transition: opacity .6s ease, clip-path .9s var(--ease); pointer-events: none; }
 .pv-item.on { opacity: 1; clip-path: inset(0 0 0 0); pointer-events: auto; }
 .note { margin-top: 26px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
@@ -156,7 +156,7 @@ body.sw main, body.sw .nav nav { opacity: 0; transition: opacity .17s ease; }
 
 /* Painéis animados */
 .pv-item { display: block; }
-.dash { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 7px; padding: 10px; background: #06050a; border: 1px solid var(--line); overflow: hidden; }
+.dash { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px; background: #06050a; border: 1px solid var(--line); overflow: hidden; }
 .dash-h { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .dash-h span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .real { flex: none; background: none; border: 0; padding: 0 0 2px; cursor: pointer; font-family: var(--sans); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-soft); border-bottom: 1px solid var(--accent); }
@@ -164,7 +164,7 @@ body.sw main, body.sw .nav nav { opacity: 0; transition: opacity .17s ease; }
 .kpis { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 8px; }
 .kpi { border: 1px solid var(--line); border-left: 3px solid var(--accent); background: #0b0a10; padding: 6px 9px 7px; min-width: 0; }
 .kpi small { display: block; font-size: 9.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.kpi b { display: block; font-size: clamp(13px, 1.25vw, 17px); font-weight: 600; color: #ecebf4; font-variant-numeric: tabular-nums; line-height: 1.25; white-space: nowrap; }
+.kpi b { display: block; font-size: clamp(14px, 1.6vw, 21px); font-weight: 600; color: #ecebf4; font-variant-numeric: tabular-nums; line-height: 1.25; white-space: nowrap; }
 .grid4 { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
 .card { min-width: 0; min-height: 0; display: flex; flex-direction: column; border: 1px solid var(--line); background: #0b0a10; padding: 7px 10px 8px; }
 .card h4 { margin: 0 0 5px; font-size: 10px; font-weight: 500; letter-spacing: .03em; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -176,26 +176,26 @@ body.sw main, body.sw .nav nav { opacity: 0; transition: opacity .17s ease; }
 .lineplot .series { fill: none; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; }
 .lineplot .area { fill: rgba(138, 91, 216, .13); stroke: none; opacity: 0; }
 
-.hb { display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.hb { display: flex; flex-direction: column; justify-content: center; gap: 5px; }
 .hb .r { display: grid; grid-template-columns: 38% 1fr auto; gap: 7px; align-items: center; font-size: 9.5px; }
 .hb .lb { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.hb .bar { height: 6px; background: #14121a; }
+.hb .bar { height: 7px; background: #14121a; }
 .hb .bar i { display: block; height: 100%; width: var(--w); background: var(--accent); transform-origin: 0 50%; }
 .hb .v { color: var(--text); font-variant-numeric: tabular-nums; min-width: 4.6em; text-align: right; }
 
 .vb { display: flex; align-items: stretch; gap: 6px; }
 .vb .c { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: stretch; }
 .vb .bw { flex: 1; display: flex; align-items: flex-end; min-height: 0; }
-.vb .bw i { display: block; width: 100%; max-width: 26px; margin: 0 auto; height: calc(var(--h) * .82); background: var(--accent); transform-origin: 50% 100%; }
+.vb .bw i { display: block; width: 100%; height: var(--h); background: var(--accent); transform-origin: 50% 100%; }
 .vb .v { font-size: 8.5px; color: var(--text); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; font-variant-numeric: tabular-nums; }
 .vb .lb { font-size: 8.5px; color: var(--muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 3px; }
 
-.dn { display: flex; align-items: center; gap: 12px; }
-.donut { height: 100%; max-height: 92px; aspect-ratio: 1; max-width: 40%; transform: rotate(-90deg); }
+.dn { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.donut { height: 100%; max-height: 84px; aspect-ratio: 1; max-width: 36%; flex: none; transform: rotate(-90deg); }
 .donut circle { fill: none; stroke-width: 5.4; }
 .donut .ring { stroke: #14121a; }
 .donut .seg { stroke-dasharray: 0 100; stroke-dashoffset: var(--o); }
-.dn ul { flex: 1; min-width: 0; display: grid; gap: 4px; font-size: 9.5px; }
+.dn ul { flex: 1; min-width: 0; max-width: 62%; display: grid; gap: 4px; font-size: 9.5px; }
 .dn li { display: grid; grid-template-columns: 8px 1fr auto; gap: 6px; align-items: center; color: var(--muted); transition: opacity .6s ease 1.2s; }
 .dn li i { width: 7px; height: 7px; }
 .dn li span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
