@@ -19,5 +19,17 @@
       <div class="actions"><a class="tl" href="/">Voltar para o início</a></div>
     </section>
   </main>
+  <script>
+    try {
+      var l = localStorage.getItem("lang") || (/^pt/i.test(navigator.language || "pt") ? "pt" : "en");
+      if (l === "en") {
+        document.documentElement.lang = "en";
+        document.title = "Page not found | Eduardo Nunes";
+        var s = document.querySelectorAll(".label, .ln span, .lede, .actions a");
+        var t = ["Error 404", "Page not", "<em>found</em>.", "The address may have changed or never existed.", "Back to home"];
+        for (var i = 0; i < s.length && i < t.length; i++) s[i].innerHTML = t[i];
+      }
+    } catch (e) {}
+  </script>
 </body>
 </html>
