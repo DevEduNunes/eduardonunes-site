@@ -37,6 +37,7 @@
     document.title = META[lang].title;
     var md = $('meta[name="description"]'); if (md) md.setAttribute("content", META[lang].desc);
     if (langLabel) langLabel.textContent = lang === "en" ? "EN" : "BR";
+    var hintEl = $("#langHint"); if (hintEl) hintEl.lang = lang === "en" ? "pt-BR" : "en";   // o aviso fala o idioma oposto
     if (langBtn) langBtn.title = lang === "en" ? "Mudar para português" : "Switch to English";
     renderDashes(); renderPosts();
     var active = $(".prow.on"); if (active) playDash(active.getAttribute("data-i"), true);
