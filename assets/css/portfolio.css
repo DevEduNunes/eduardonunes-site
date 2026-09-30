@@ -46,6 +46,13 @@ button { font: inherit; color: inherit; }
 .hint { position: absolute; left: calc(var(--pad) + 56px); top: 10px; max-width: 232px; display: flex; flex-direction: column; gap: 3px; padding: 9px 14px 10px; background: #09080d; border: 1px solid var(--line); border-left: 2px solid var(--accent); font-size: 12px; line-height: 1.4; color: var(--muted); pointer-events: auto; cursor: pointer; opacity: 0; transform: translateX(-8px); transition: opacity .6s ease, transform .8s var(--ease); }
 .hint[hidden] { display: none; }
 .hint.show { opacity: 1; transform: none; }
+.hint .tm { position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--accent); transform-origin: 0 50%; }
+.hint.show .tm { animation: hintbar 12s linear forwards; }
+.hint.show::before { animation: nudge 1.3s ease-in-out .8s 3; }
+.lang.hinting i { animation: dotblink 1.3s ease-in-out .8s 3; }
+@keyframes hintbar { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@keyframes nudge { 0%, 100% { transform: translateX(0) rotate(45deg); } 50% { transform: translateX(-5px) rotate(45deg); } }
+@keyframes dotblink { 0%, 100% { opacity: 1; } 50% { opacity: .2; } }
 .hint b { font-size: 10.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--text); }
 .hint::before { content: ""; position: absolute; left: -6px; top: 14px; width: 9px; height: 9px; background: #09080d; border-left: 1px solid var(--accent); border-bottom: 1px solid var(--accent); transform: rotate(45deg); }
 .nav ul { display: flex; gap: 28px; }

@@ -48,7 +48,11 @@
     document.body.classList.add("sw");
     setTimeout(function () { applyLang(); document.body.classList.remove("sw"); }, animated ? 170 : 0);
   }
-  if (langBtn) langBtn.addEventListener("click", function () { hideHint(); setLang(lang === "pt" ? "en" : "pt"); });
+  if (langBtn) langBtn.addEventListener("click", function () {
+    hideHint();
+    try { localStorage.setItem("langPicked", "1"); } catch (e) {}
+    setLang(lang === "pt" ? "en" : "pt");
+  });
 
   /* Aviso discreto: mostra onde trocar o idioma, uma vez, na primeira visita */
   var hint = $("#langHint"), hintTimer = null, hintShown = false;
@@ -58,24 +62,25 @@
     if (langBtn) langBtn.classList.remove("hinting");
     hint.classList.remove("show");
     setTimeout(function () { hint.hidden = true; }, 700);
-    try { localStorage.setItem("hint", "1"); } catch (e) {}
+    try { sessionStorage.setItem("hint", "1"); } catch (e) {}
     window.removeEventListener("scroll", onHintScroll);
   }
   function onHintScroll() { if (window.scrollY > 240) hideHint(); }
   function showHint() {
     var seen = false;
-    try { seen = !!localStorage.getItem("hint") || !!localStorage.getItem("lang"); } catch (e) {}
-    if (!hint || seen || hintShown) return;
+    var force = /[?&]hint\b/.test(location.search);
+    try { seen = !!localStorage.getItem("langPicked") || !!sessionStorage.getItem("hint"); } catch (e) {}
+    if (!hint || (seen && !force) || hintShown) return;
     hintShown = true;
     hint.hidden = false;
     if (langBtn) langBtn.classList.add("hinting");
     setTimeout(function () { hint.classList.add("show"); }, 80);
-    hintTimer = setTimeout(hideHint, 9000);
+    hintTimer = setTimeout(hideHint, 12000);
     hint.addEventListener("click", hideHint);
     window.addEventListener("scroll", onHintScroll, { passive: true });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideHint(); }, { once: true });
   }
-  setTimeout(showHint, animated ? 3800 : 800);
+  setTimeout(showHint, animated ? 2200 : 600);
 
   /* =====================================================================
      Painéis animados (recriados a partir dos painéis reais de Power BI)
