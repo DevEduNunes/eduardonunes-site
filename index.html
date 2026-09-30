@@ -6,7 +6,7 @@
   <title>Eduardo Nunes | Analista de dados</title>
   <meta name="description" content="Eduardo Nunes, analista e consultor de dados em Anápolis, GO. Painéis em Power BI, pipelines no Microsoft Fabric e automações em Python.">
   <meta name="author" content="Eduardo Nunes">
-  <meta name="theme-color" content="#0b0a0e">
+  <meta name="theme-color" content="#030305">
   <link rel="canonical" href="https://eduardonunes.dev/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Eduardo Nunes | Analista de dados">
@@ -15,143 +15,158 @@
   <meta property="og:image" content="https://eduardonunes.dev/assets/images/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/figtree-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/robotoslab-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spacegrotesk-latin.woff2" crossorigin>
+  <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js")</script>
   <link rel="stylesheet" href="assets/css/portfolio.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Eduardo Nunes","url":"https://eduardonunes.dev/","jobTitle":"Analista e Consultor de Dados","email":"contato@eduardonunes.dev","address":{"@type":"PostalAddress","addressLocality":"Anápolis","addressRegion":"GO","addressCountry":"BR"},"sameAs":["https://www.linkedin.com/in/eduardonunesgoncalves/","https://github.com/DevEduNunes","https://datanexos.com"]}
   </script>
 </head>
 <body>
+<canvas id="art" aria-hidden="true"></canvas>
 
-<header class="top">
-  <div class="wrap">
-    <a class="name" href="#">Eduardo Nunes</a>
-    <nav aria-label="Principal">
-      <a href="#projetos">Projetos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </div>
+<header class="nav">
+  <a class="logo" href="#home">EN<i>.</i></a>
+  <nav aria-label="Principal">
+    <ul>
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#sobre" data-nav="sobre">Sobre</a></li>
+      <li><a href="#projetos" data-nav="projetos">Projetos</a></li>
+      <li><a href="#linkedin" data-nav="linkedin">LinkedIn</a></li>
+      <li><a href="#contato" data-nav="contato">Contato</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
-  <div class="intro">
-    <div class="wrap">
-      <h1>Analista de dados em Anápolis<i>.</i></h1>
-      <p class="lead">Construo painéis em Power BI, pipelines no Microsoft Fabric e automações em Python. Para empresas, atendo também pela <a class="link" href="https://datanexos.com" target="_blank" rel="noopener">Data Nexos</a>.</p>
-      <p class="lead">Aberto a vagas e a novos projetos. Escreva para <a class="link" href="mailto:contato@eduardonunes.dev">contato@eduardonunes.dev</a>.</p>
+
+  <!-- Home -->
+  <section class="scene" id="home">
+    <div class="kicker plain fx"><span class="label">Analista de dados · Anápolis, GO</span></div>
+    <h1 class="big">
+      <span class="ln"><span>Transformo</span></span>
+      <span class="ln"><span style="--d:.1s">dados em</span></span>
+      <span class="ln"><span style="--d:.2s"><em>decisões</em>.</span></span>
+    </h1>
+    <p class="lede fx" style="--d:.55s">Painéis em Power BI, pipelines no Microsoft Fabric e automações em Python. Para empresas, atendo também pela <a class="tl" style="font-size:inherit;letter-spacing:0;text-transform:none;font-weight:500" href="https://datanexos.com" target="_blank" rel="noopener">Data Nexos</a>.</p>
+    <div class="actions fx" style="--d:.7s">
+      <a class="tl" href="#projetos">Ver projetos</a>
+      <a class="tl" href="#contato">Falar comigo</a>
     </div>
-  </div>
+  </section>
 
-  <section id="projetos">
-    <div class="wrap row">
-      <h2>Projetos</h2>
+  <!-- Sobre -->
+  <section class="scene" id="sobre">
+    <div class="kicker fx"><span class="count">01 / 04</span><span class="bar"></span><span class="label">Quem sou eu?</span></div>
+    <h2 class="big md">
+      <span class="ln"><span>Sou o Eduardo,</span></span>
+      <span class="ln"><span style="--d:.1s"><em>analista</em> de dados.</span></span>
+    </h2>
+    <p class="lede fx" style="--d:.45s">Pego informação espalhada em planilhas, sistemas e pastas e entrego algo confiável, que se atualiza sozinho e ajuda quem precisa decidir. Trabalho da modelagem ao painel final.</p>
+    <div class="about-grid fx" style="--d:.6s">
       <div>
-        <div class="projects">
-          <figure class="project">
-            <button type="button" data-zoom="assets/images/work/dashboard-vendas.webp" data-title="Vendas e Comercial" aria-label="Ampliar: Vendas e Comercial">
-              <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-vendas.webp" alt="Painel de Vendas e Comercial em Power BI">
-            </button>
-            <h3>Vendas e Comercial</h3>
-            <span class="mono tech">Power BI</span>
-            <p>Faturamento, ticket médio, margem e crescimento ano a ano, por categoria, vendedor e segmento.</p>
-          </figure>
+        <h3>Experiência</h3>
+        <ul>
+          <li><span>Consultor de Dados</span><span>2026 a hoje</span></li>
+          <li><span>Analista de Dados</span><span>2025 a hoje</span></li>
+          <li><span>Assistente de Dados</span><span>2024 a 2025</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ferramentas</h3>
+        <ul>
+          <li><span>Power BI</span><span>DAX e modelagem</span></li>
+          <li><span>Microsoft Fabric</span><span>Lakehouse e pipelines</span></li>
+          <li><span>Python</span><span>PySpark e automação</span></li>
+          <li><span>Excel</span><span>Análise e rotinas</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-          <figure class="project">
-            <button type="button" data-zoom="assets/images/work/dashboard-financeiro.webp" data-title="Financeiro" aria-label="Ampliar: Financeiro">
-              <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-financeiro.webp" alt="Painel Financeiro com fluxo de caixa e DRE em Power BI">
-            </button>
-            <h3>Financeiro</h3>
-            <span class="mono tech">Power BI</span>
-            <p>Fluxo de caixa e DRE simplificado: receita, despesa, resultado e margem, por categoria e centro de custo.</p>
-          </figure>
+  <!-- Projetos -->
+  <section class="scene" id="projetos">
+    <div class="kicker fx"><span class="count">02 / 04</span><span class="bar"></span><span class="label">Trabalhos selecionados</span></div>
+    <div class="work">
+      <ol class="plist fx" style="--d:.2s">
+        <li class="prow on" data-i="0" data-zoom="assets/images/work/dashboard-vendas.webp" data-title="Vendas e Comercial" tabindex="0" role="button" aria-label="Ampliar: Vendas e Comercial">
+          <div class="top"><span class="n">01</span><h3 class="t">Vendas e Comercial</h3><span class="tech">Power BI</span></div>
+          <div class="d"><p>Faturamento, ticket médio, margem e crescimento ano a ano, por categoria, vendedor e segmento.</p></div>
+          <img class="mimg" loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-vendas.webp" alt="Painel de Vendas e Comercial em Power BI">
+        </li>
+        <li class="prow" data-i="1" data-zoom="assets/images/work/dashboard-financeiro.webp" data-title="Financeiro" tabindex="0" role="button" aria-label="Ampliar: Financeiro">
+          <div class="top"><span class="n">02</span><h3 class="t">Financeiro</h3><span class="tech">Power BI</span></div>
+          <div class="d"><p>Fluxo de caixa e DRE simplificado: receita, despesa, resultado e margem, por categoria e centro de custo.</p></div>
+          <img class="mimg" loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-financeiro.webp" alt="Painel Financeiro com fluxo de caixa e DRE em Power BI">
+        </li>
+        <li class="prow" data-i="2" data-zoom="assets/images/work/dashboard-rh.webp" data-title="RH e Pessoas" tabindex="0" role="button" aria-label="Ampliar: RH e Pessoas">
+          <div class="top"><span class="n">03</span><h3 class="t">RH e Pessoas</h3><span class="tech">Power BI</span></div>
+          <div class="d"><p>Headcount, turnover e folha salarial por departamento, cargo, gênero e motivo de desligamento.</p></div>
+          <img class="mimg" loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-rh.webp" alt="Painel de RH com turnover e headcount em Power BI">
+        </li>
+        <li class="prow" data-i="3" data-zoom="assets/images/work/dashboard-estoque.webp" data-title="Estoque e Logística" tabindex="0" role="button" aria-label="Ampliar: Estoque e Logística">
+          <div class="top"><span class="n">04</span><h3 class="t">Estoque e Logística</h3><span class="tech">Power BI</span></div>
+          <div class="d"><p>Giro de estoque, entradas, saídas e ruptura por categoria, produto e depósito, com evolução mensal.</p></div>
+          <img class="mimg" loading="lazy" width="1098" height="617" src="assets/images/work/dashboard-estoque.webp" alt="Painel de Estoque com giro e ruptura em Power BI">
+        </li>
+        <li class="prow" data-i="4">
+          <div class="top"><span class="n">05</span><h3 class="t">Pipeline medalhão</h3><span class="tech">Fabric</span></div>
+          <div class="d"><p>Do Excel solto em pasta ao dado governado, atualizado sozinho: Lakehouses em camadas, Data Factory, Dataflows Gen2, Direct Lake e notebooks PySpark, com o refresh do painel dentro do próprio fluxo.</p></div>
+        </li>
+      </ol>
 
-          <figure class="project">
-            <button type="button" data-zoom="assets/images/work/dashboard-rh.webp" data-title="RH e Pessoas" aria-label="Ampliar: RH e Pessoas">
-              <img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-rh.webp" alt="Painel de RH com turnover e headcount em Power BI">
-            </button>
-            <h3>RH e Pessoas</h3>
-            <span class="mono tech">Power BI</span>
-            <p>Headcount, turnover e folha salarial por departamento, cargo, gênero e motivo de desligamento.</p>
-          </figure>
-
-          <figure class="project">
-            <button type="button" data-zoom="assets/images/work/dashboard-estoque.webp" data-title="Estoque e Logística" aria-label="Ampliar: Estoque e Logística">
-              <img loading="lazy" width="1098" height="617" src="assets/images/work/dashboard-estoque.webp" alt="Painel de Estoque com giro e ruptura em Power BI">
-            </button>
-            <h3>Estoque e Logística</h3>
-            <span class="mono tech">Power BI</span>
-            <p>Giro de estoque, entradas, saídas e ruptura por categoria, produto e depósito, com evolução mensal.</p>
-          </figure>
-
-          <figure class="project feature">
-            <p class="flow" aria-label="Bronze, Silver, Gold, Power BI">Bronze<span>→</span>Silver<span>→</span>Gold<span>→</span>Power BI</p>
-            <h3>Pipeline em arquitetura medalhão</h3>
-            <span class="mono tech">Microsoft Fabric · PySpark · Data Factory</span>
-            <p>Do Excel solto em pasta ao dado governado, atualizado sozinho. Lakehouses em camadas, pipeline no Data Factory, Dataflows Gen2, modelos semânticos em Direct Lake e notebooks PySpark, com o refresh do painel dentro do próprio fluxo.</p>
-          </figure>
+      <div class="pv fx" style="--d:.35s" aria-hidden="false">
+        <div class="pv-item on" data-i="0"><button type="button" data-zoom="assets/images/work/dashboard-vendas.webp" data-title="Vendas e Comercial" aria-label="Ampliar: Vendas e Comercial"><img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-vendas.webp" alt="Painel de Vendas e Comercial em Power BI"></button></div>
+        <div class="pv-item" data-i="1"><button type="button" data-zoom="assets/images/work/dashboard-financeiro.webp" data-title="Financeiro" aria-label="Ampliar: Financeiro"><img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-financeiro.webp" alt="Painel Financeiro com fluxo de caixa e DRE em Power BI"></button></div>
+        <div class="pv-item" data-i="2"><button type="button" data-zoom="assets/images/work/dashboard-rh.webp" data-title="RH e Pessoas" aria-label="Ampliar: RH e Pessoas"><img loading="lazy" width="1098" height="525" src="assets/images/work/dashboard-rh.webp" alt="Painel de RH com turnover e headcount em Power BI"></button></div>
+        <div class="pv-item" data-i="3"><button type="button" data-zoom="assets/images/work/dashboard-estoque.webp" data-title="Estoque e Logística" aria-label="Ampliar: Estoque e Logística"><img loading="lazy" width="1098" height="617" src="assets/images/work/dashboard-estoque.webp" alt="Painel de Estoque com giro e ruptura em Power BI"></button></div>
+        <div class="pv-item" data-i="4">
+          <div class="pv-diagram" role="img" aria-label="Arquitetura medalhão: Bronze, Silver, Gold e Power BI">
+            <div class="step">Bronze <small>ingestão em Lakehouse</small></div><div class="arrow">↓</div>
+            <div class="step">Silver <small>limpeza, tipagem e regras</small></div><div class="arrow">↓</div>
+            <div class="step">Gold <small>modelo pronto para análise</small></div><div class="arrow">↓</div>
+            <div class="step">Power BI <small>Direct Lake e refresh no fluxo</small></div>
+          </div>
         </div>
-        <p class="mono" style="margin-top:40px">Os painéis usam dados fictícios.</p>
       </div>
     </div>
+    <p class="note fx" style="--d:.5s">Passe o mouse para ver, clique para ampliar. Os painéis usam dados fictícios.</p>
   </section>
 
-  <section id="sobre">
-    <div class="wrap row">
-      <h2>Sobre</h2>
-      <div class="prose">
-        <p>Sou analista e consultor de dados. Meu trabalho é pegar informação espalhada em planilhas, sistemas e pastas e entregar algo confiável, que se atualiza sozinho e ajuda quem precisa decidir.</p>
-        <p class="muted">Trabalho da modelagem ao painel final, com Power BI, Microsoft Fabric, Python e Excel.</p>
-        <ul class="table">
-          <li><span class="mono">2026 a hoje</span><span>Consultor de Dados <em>· Data Nexos</em></span></li>
-          <li><span class="mono">2025 a hoje</span><span>Analista de Dados</span></li>
-          <li><span class="mono">2024 a 2025</span><span>Assistente de Dados</span></li>
-        </ul>
-        <ul class="table" style="margin-top:32px">
-          <li><span class="mono">Power BI</span><span>Modelagem, DAX e dashboards</span></li>
-          <li><span class="mono">Microsoft Fabric</span><span>Lakehouse, Data Factory e Dataflows</span></li>
-          <li><span class="mono">Python</span><span>Automação e PySpark</span></li>
-          <li><span class="mono">Excel</span><span>Análise e automação de rotinas</span></li>
-        </ul>
-      </div>
-    </div>
+  <!-- LinkedIn -->
+  <section class="scene" id="linkedin">
+    <div class="kicker fx"><span class="count">03 / 04</span><span class="bar"></span><span class="label">Direto do LinkedIn</span></div>
+    <h2 class="big md">
+      <span class="ln"><span>O que ando</span></span>
+      <span class="ln"><span style="--d:.1s"><em>construindo</em>.</span></span>
+    </h2>
+    <ul class="posts fx" id="linkedinPosts" style="--d:.45s"></ul>
+    <p class="more fx" style="--d:.6s"><a class="tl" href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer">Ver mais no LinkedIn</a></p>
   </section>
 
-  <section id="posts">
-    <div class="wrap row">
-      <h2>LinkedIn</h2>
-      <div>
-        <ul class="posts" id="linkedinPosts"></ul>
-        <p class="more"><a class="link" href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer">Ver mais no LinkedIn</a></p>
-      </div>
+  <!-- Contato -->
+  <section class="scene" id="contato">
+    <div class="kicker fx"><span class="count">04 / 04</span><span class="bar"></span><span class="label">Vamos conversar</span></div>
+    <h2 class="big md">
+      <span class="ln"><span>Vamos construir</span></span>
+      <span class="ln"><span style="--d:.1s">algo <em>juntos</em>?</span></span>
+    </h2>
+    <div class="fx" style="--d:.45s">
+      <a class="mail" href="mailto:contato@eduardonunes.dev">contato@eduardonunes.dev</a>
     </div>
-  </section>
-
-  <section id="contato">
-    <div class="wrap row">
-      <h2>Contato</h2>
-      <div>
-        <a class="mail link" href="mailto:contato@eduardonunes.dev">contato@eduardonunes.dev</a>
-        <p class="contact-links">
-          <a class="link" href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="link" href="https://github.com/DevEduNunes" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="link" href="https://datanexos.com" target="_blank" rel="noopener">Data Nexos</a>
-        </p>
-      </div>
+    <div class="socials fx" style="--d:.6s">
+      <a class="tl" href="https://www.linkedin.com/in/eduardonunesgoncalves/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="tl" href="https://github.com/DevEduNunes" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="tl" href="https://datanexos.com" target="_blank" rel="noopener">Data Nexos</a>
     </div>
+    <div class="foot"><span>© <span id="ano">2026</span> Eduardo Nunes</span><span>Anápolis, GO</span></div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span class="mono">© <span id="ano">2026</span> Eduardo Nunes</span>
-    <span class="mono">Anápolis, GO</span>
-  </div>
-</footer>
-
 <dialog id="lightbox" aria-label="Imagem ampliada">
   <img src="" alt="">
-  <form method="dialog"><span class="mono"></span><button>Fechar</button></form>
+  <form method="dialog"><span></span><button>Fechar</button></form>
 </dialog>
 
 <script>document.getElementById("ano").textContent = new Date().getFullYear();</script>
