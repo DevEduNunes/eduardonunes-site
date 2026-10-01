@@ -1,9 +1,31 @@
 # Eduardo Nunes — Portfólio
 
-Site estático publicado no GitHub Pages. Todo push na `master` publica sozinho (`.github/workflows/pages.yml`).
+Site estático (HTML, CSS e JS puros, sem build) publicado no GitHub Pages em https://eduardonunes.dev.
 
-Ponto de partida: template do site Data Nexos (conteúdo adaptado para Eduardo Nunes).
+## Publicação
 
-## Domínio
+Todo push na `master` publica sozinho pelo workflow `.github/workflows/pages.yml`:
 
-Domínio: `eduardonunes.dev` (arquivo `CNAME` na raiz). DNS no Cloudflare: 4 registros `A` (185.199.108.153, .109.153, .110.153, .111.153) e `CNAME www` para `<usuario>.github.io`, sem proxy ate o certificado ser emitido.
+1. `.github/version-assets.sh` acrescenta `?v=<hash>` nos CSS/JS referenciados pelos HTMLs (cache busting).
+2. A pasta do site é montada sem `.git`, `.github` e `README.md`.
+3. O resultado é enviado ao GitHub Pages.
+
+O workflow não usa segredos, só as permissões padrão de deploy do Pages.
+
+## Estrutura
+
+- `index.html`, `404.html`: páginas.
+- `assets/css/portfolio.css`, `assets/js/portfolio.js`: estilo e comportamento.
+- `assets/data/linkedin-posts.json`: posts do LinkedIn exibidos no site (atualizado à mão).
+- `assets/fonts`, `assets/images`: fontes locais e imagens (dashboards em `.webp`).
+
+## Domínio e DNS
+
+- `CNAME` na raiz aponta para `eduardonunes.dev`.
+- DNS no Cloudflare: 4 registros `A` do GitHub Pages (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) e `CNAME www` para `devedununes.github.io`.
+- `contato@eduardonunes.dev` é um alias (Cloudflare Email Routing); o endereço real não fica no repositório.
+
+## Cuidados
+
+- Não versionar chaves, tokens, `.env`, dados de clientes ou números pessoais.
+- Os commits usam o e-mail `noreply` do GitHub.
