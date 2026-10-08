@@ -124,6 +124,12 @@ button { font: inherit; color: inherit; }
 .posts a:hover { color: #fff; }
 .posts a:hover .tt { transform: translateX(8px); }
 .posts a:hover::after { opacity: 1; transform: none; }
+.repos a { grid-template-columns: 1fr 24px; align-items: center; }
+.repos .rp { display: flex; flex-direction: column; gap: 6px; }
+.repos .ds { font-size: 14px; color: var(--muted); }
+.repos .tc { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.repos .tc span { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-soft); border: 1px solid var(--line); padding: 3px 9px; }
+.scene[hidden] { display: none; }
 .more { margin-top: 30px; }
 
 /* Contato */
@@ -258,6 +264,7 @@ html:not(.js) .lineplot .area { opacity: 1; }
   .about-grid { grid-template-columns: 1fr; }
   .posts a { grid-template-columns: 1fr; gap: 2px; }
   .posts a::after { display: none; }
+  .repos a { grid-template-columns: 1fr; }
   .foot { position: static; margin-top: 70px; }
 }
 @media (max-width: 640px) {

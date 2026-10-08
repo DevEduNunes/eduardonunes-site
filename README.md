@@ -17,6 +17,7 @@ O workflow não usa segredos, só as permissões padrão de deploy do Pages.
 - `index.html`, `404.html`: páginas.
 - `assets/css/portfolio.css`, `assets/js/portfolio.js`: estilo e comportamento.
 - `assets/data/linkedin-posts.json`: posts do LinkedIn exibidos no site (atualizado à mão).
+- Seção **GitHub** (`#github`): o navegador lê os repositórios públicos de `DevEduNunes` pela API do GitHub (cache de 1 h). Entram os que têm descrição, não são fork nem arquivados (fora o próprio site). As tecnologias vêm das linguagens do repositório + *topics*; para ajustar, edite a descrição/topics no GitHub. Se a API falhar, a seção e o item do menu somem.
 - `assets/fonts`, `assets/images`: fontes locais e imagens (dashboards em `.webp`).
 
 ## Domínio e DNS

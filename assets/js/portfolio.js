@@ -39,7 +39,7 @@
     if (langLabel) langLabel.textContent = lang === "en" ? "EN" : "BR";
     var hintEl = $("#langHint"); if (hintEl) hintEl.lang = lang === "en" ? "pt-BR" : "en";   // o aviso fala o idioma oposto
     if (langBtn) langBtn.title = lang === "en" ? "Mudar para português" : "Switch to English";
-    renderDashes(); renderPosts();
+    renderDashes(); renderPosts(); renderRepos();
     var active = $(".prow.on"); if (active) playDash(active.getAttribute("data-i"), true);
   }
   function setLang(next) {
@@ -281,6 +281,46 @@
   }
 
   /* =====================================================================
+     Projetos do GitHub (API publica, so repositorios com descricao; cache de 1 h)
+     ===================================================================== */
+  var GH_USER = "DevEduNunes", GH_SKIP = ["eduardonunes-site", "datanexos-site", GH_USER.toLowerCase()];
+  var GH_KEY = "en-gh-repos-v1", GH_TTL = 36e5, REPOS = [], repoList = $("#githubRepos");
+  function ghCache() { try { var c = JSON.parse(localStorage.getItem(GH_KEY)); return c && Date.now() - c.t < GH_TTL ? c.d : null; } catch (e) { return null; } }
+  function renderRepos() {
+    if (!repoList) return;
+    var sec = repoList.closest("section"), has = REPOS.length > 0;
+    sec.hidden = !has;
+    $$('[data-nav="github"]').forEach(function (a) { a.parentNode.hidden = !has; });
+    repoList.innerHTML = REPOS.map(function (r) {
+      var tc = r.techs.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("");
+      return '<li><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer"><span class="rp"><span class="tt">' + esc(r.name) + '</span><span class="ds">' + esc(r.desc) + "</span>" + (tc ? '<span class="tc">' + tc + "</span>" : "") + "</span></a></li>";
+    }).join("");
+  }
+  function loadRepos() {
+    var cached = ghCache();
+    if (cached) return Promise.resolve(cached);
+    return fetch("https://api.github.com/users/" + GH_USER + "/repos?per_page=100&sort=pushed", { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (repos) {
+        repos = (Array.isArray(repos) ? repos : []).filter(function (r) {
+          return r && !r.fork && !r.archived && !r.private && r.description && GH_SKIP.indexOf(String(r.name).toLowerCase()) < 0;
+        }).slice(0, 6);
+        return Promise.all(repos.map(function (r) {
+          return fetch(r.languages_url).then(function (x) { return x.ok ? x.json() : {}; }).catch(function () { return {}; }).then(function (l) {
+            var names = Object.keys(l || {});
+            if (!names.length && r.language) names = [r.language];
+            var techs = names.concat(r.topics || []).filter(function (t, i, a) { return a.indexOf(t) === i; }).slice(0, 6);
+            return { name: r.name.replace(/[-_]+/g, " ").replace(/(^| )(\w)/g, function (m, a, b) { return a + b.toUpperCase(); }), desc: r.description, techs: techs, url: /^https:\/\//i.test(r.homepage || "") ? r.homepage : r.html_url };
+          });
+        })).then(function (out) {
+          if (out.length) { try { localStorage.setItem(GH_KEY, JSON.stringify({ t: Date.now(), d: out })); } catch (e) {} }
+          return out;
+        });
+      });
+  }
+  if (repoList) { repoList.closest("section").hidden = true; loadRepos().catch(function () { return []; }).then(function (out) { REPOS = out; renderRepos(); }); }
+
+  /* =====================================================================
      Objeto de fundo: rede em aramado que muda a cada cena
      ===================================================================== */
   var cv = $("#art");
@@ -291,6 +331,7 @@
     home:     { x: 0.70, y: 0.52, s: 1.0,  a: 1.0,  v: 1.0 },
     sobre:    { x: 0.74, y: 0.50, s: 0.85, a: 0.85, v: 0.7 },
     projetos: { x: 0.50, y: 0.50, s: 1.5,  a: 0.07, v: 0.4 },
+    github:   { x: 0.78, y: 0.55, s: 0.8,  a: 0.6,  v: 1.0 },
     linkedin: { x: 0.80, y: 0.58, s: 0.75, a: 0.65, v: 1.2 },
     contato:  { x: 0.50, y: 0.50, s: 1.25, a: 0.45, v: 0.8 }
   };
