@@ -283,8 +283,10 @@
   /* =====================================================================
      Projetos do GitHub (API publica, so repositorios com descricao; cache de 1 h)
      ===================================================================== */
+  // Texto proprio para repositorios sem descricao no GitHub (a descricao do GitHub, se existir, vale mais que isto)
+  var GH_TEXT = { hushrig: { name: "HushRig", pt: "Plugin VST3 de áudio para guitarra no PC, com noise gate de latência zero. Código aberto.", en: "VST3 guitar audio plugin for PC, with a zero-latency noise gate. Open source." } };
   var GH_USER = "DevEduNunes", GH_SKIP = ["eduardonunes-site", "datanexos-site", GH_USER.toLowerCase()];
-  var GH_KEY = "en-gh-repos-v2", GH_TTL = 36e5, REPOS = [], repoList = $("#githubRepos");
+  var GH_KEY = "en-gh-repos-v3", GH_TTL = 36e5, REPOS = [], repoList = $("#githubRepos");
   function ghCache() { try { var c = JSON.parse(localStorage.getItem(GH_KEY)); return c && Date.now() - c.t < GH_TTL ? c.d : null; } catch (e) { return null; } }
   function renderRepos() {
     if (!repoList) return;
@@ -295,7 +297,7 @@
       function fd(v) { var d = new Date(v); return isNaN(d) ? "" : d.toLocaleDateString(LOC[lang], { day: "2-digit", month: "2-digit", year: "numeric" }); }
       var meta = [fd(r.created) && (lang === "en" ? "Created " : "Criado em ") + fd(r.created), fd(r.pushed) && (lang === "en" ? "Last commit " : "Último commit ") + fd(r.pushed)].filter(Boolean).join(" · ");
       var tc = r.techs.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("");
-      return '<li><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer"><span class="rp"><span class="tt">' + esc(r.name) + '</span><span class="ds">' + esc(r.desc) + "</span>" + (meta ? '<span class="mt">' + esc(meta) + "</span>" : "") + (tc ? '<span class="tc">' + tc + "</span>" : "") + "</span></a></li>";
+      return '<li><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer"><span class="rp"><span class="tt">' + esc(r.name) + '</span><span class="ds">' + esc(lang === "en" && r.descEn ? r.descEn : r.desc) + "</span>" + (meta ? '<span class="mt">' + esc(meta) + "</span>" : "") + (tc ? '<span class="tc">' + tc + "</span>" : "") + "</span></a></li>";
     }).join("");
   }
   function loadRepos() {
@@ -305,7 +307,7 @@
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (repos) {
         repos = (Array.isArray(repos) ? repos : []).filter(function (r) {
-          return r && !r.fork && !r.archived && !r.private && r.description && GH_SKIP.indexOf(String(r.name).toLowerCase()) < 0;
+          return r && !r.fork && !r.archived && !r.private && (r.description || GH_TEXT[String(r.name).toLowerCase()]) && GH_SKIP.indexOf(String(r.name).toLowerCase()) < 0;
         }).sort(function (a, b) {
           // mais recente primeiro: data de criacao; empate desempata pelo ultimo commit (push)
           return (new Date(b.created_at) - new Date(a.created_at)) || (new Date(b.pushed_at) - new Date(a.pushed_at));
@@ -315,7 +317,7 @@
             var names = Object.keys(l || {});
             if (!names.length && r.language) names = [r.language];
             var techs = names.concat(r.topics || []).filter(function (t, i, a) { return a.indexOf(t) === i; }).slice(0, 6);
-            return { name: r.name.replace(/[-_]+/g, " ").replace(/(^| )(\w)/g, function (m, a, b) { return a + b.toUpperCase(); }), desc: r.description, techs: techs, created: r.created_at, pushed: r.pushed_at, url: /^https:\/\//i.test(r.homepage || "") ? r.homepage : r.html_url };
+            return { name: (GH_TEXT[r.name.toLowerCase()] || {}).name || r.name.replace(/[-_]+/g, " ").replace(/(^| )(\w)/g, function (m, a, b) { return a + b.toUpperCase(); }), desc: r.description || GH_TEXT[r.name.toLowerCase()].pt, descEn: r.description ? "" : GH_TEXT[r.name.toLowerCase()].en, techs: techs, created: r.created_at, pushed: r.pushed_at, url: /^https:\/\//i.test(r.homepage || "") ? r.homepage : r.html_url };
           });
         })).then(function (out) {
           if (out.length) { try { localStorage.setItem(GH_KEY, JSON.stringify({ t: Date.now(), d: out })); } catch (e) {} }
