@@ -127,6 +127,7 @@ button { font: inherit; color: inherit; }
 .repos a { grid-template-columns: 1fr 24px; align-items: center; }
 .repos .rp { display: flex; flex-direction: column; gap: 6px; }
 .repos .ds { font-size: 14px; color: var(--muted); }
+.repos .mt { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
 .repos .tc { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .repos .tc span { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-soft); border: 1px solid var(--line); padding: 3px 9px; }
 .scene[hidden] { display: none; }
