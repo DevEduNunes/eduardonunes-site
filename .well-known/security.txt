@@ -1,0 +1,4 @@
+Contact: mailto:contato@eduardonunes.dev
+Expires: 2027-10-13T00:00:00.000Z
+Preferred-Languages: pt, en
+Canonical: https://eduardonunes.dev/.well-known/security.txt
